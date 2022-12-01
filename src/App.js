@@ -22,7 +22,7 @@ function App() {
         </div>
       </div>
       <div class="footer">
-        <h2 class="footer">NetflixRoulette</h2>
+        <h2 class="footertext">NetflixRoulette</h2>
       </div>
     </body>
   );
