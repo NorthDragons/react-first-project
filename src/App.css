@@ -1,0 +1,76 @@
+body {
+  width: 1500px;
+  margin: 0 auto;
+  background-color: rgb(34, 34, 34);
+}
+
+div.main {
+  height: 200;
+
+}
+
+img.displayed {
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+div.container {
+  position: static;
+  width: 100%;
+  max-width: 1024px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.text {
+  font-family: "Lucida Console";
+  text-align: left;
+  color: rgb(247, 96, 96);
+}
+
+span.test {
+  font-family: Verdana;
+  font-weight: 900;
+}
+
+.text#white {
+  margin-top: 200px;
+  text-align: center;
+  color: antiquewhite;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 50px;
+  margin: 0;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(34, 34, 34);
+  border-color: red;
+  color: red;
+}
+
+
+.footer {
+  background-color: rgb(107, 104, 104);
+  position:absolute;
+  left: 0;
+  bottom: 1%;
+  width: 100%;
+  height: 80px;
+}
+h2.footer{
+  top: 5%;
+  text-align: center;
+  color: red;
+}
