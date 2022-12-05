@@ -1,0 +1,29 @@
+.search-form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../../images/banner.jpg);
+    width: 100%;
+    height: 30%;
+}
+
+.input{
+    background-color: #424242;
+    border: black;
+    color: rgb(221, 219, 219);
+    width: 40%;
+    height: 15%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+}
+.button{
+    border: 1px solid#F65261;
+    background-color: #F65261;
+    color:white;
+    opacity: 0.9;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 1%;
+    width: 10%;
+    height: 14%;
+}
