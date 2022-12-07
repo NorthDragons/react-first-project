@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
-import SearchForm from './components/search/SearchForm'
+import Banner from './components/banner/Banner';
+import Content from './components/content/Content';
 
 function App() {
   return (
     <React.Fragment>
-      <Header showButton={true}/>
-      <SearchForm/>
+      <Banner />
+      <Content/>
       <Footer />
     </React.Fragment>
   );

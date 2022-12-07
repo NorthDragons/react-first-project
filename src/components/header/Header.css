@@ -1,17 +1,18 @@
 .header {
-    position: absolute;
+    /* display: flex; */
+    /* flex-direction: ; */
     background-color: transparent;
     width: 95%;
-    height: 5%;
-    margin: 4px 20px 15px 20px;
+    height: 14%;
+    margin: 6px 20px 2px 20px;
 }
 
-button {
+button.header__button {
+    font-size: large;
     background-color: #555555;
     float: right;
     height: 80%;
     width: 15%;
-    /* background-color: transparent; */
     color: #F65261;
     border: 1px solid #444343;
     border-radius: 3px;

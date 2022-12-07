@@ -4,14 +4,12 @@ import { logo } from './../logo/Logo.js';
 
 function Header( {showButton}) {
     return (
-        <React.Fragment>
             <div className="header">
                 {logo}
-                {showButton && <button role="button">
+                {showButton && <button className='header__button' role="button">
                     + ADD MOVIE
                 </button>}
             </div>
-        </React.Fragment>
     );
 
 }

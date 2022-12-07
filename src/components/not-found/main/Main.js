@@ -4,7 +4,6 @@ import logo404 from '../../../images/not-found.png'
 
 function Main() {
     return (
-        <React.Fragment>
             <div className="main">
                 <h1 id="not-found" className="text">Page Not Found</h1>
                 <img alt="404 not found" src={logo404} />
@@ -12,7 +11,6 @@ function Main() {
                     Go Back To Home
                 </button>
             </div>
-        </React.Fragment>
     );
 }
 
