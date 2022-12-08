@@ -22,10 +22,11 @@
 }
 
 .film-title__h2-name {
-    width: 70%;
+    width: 60%;
 }
 
 .film-title__p-year {
+    border: 1px solid #FFFFFF;
     width: 30%;
 }
 
