@@ -1,7 +1,10 @@
 import React from "react";
 import './Content.css'
-import Filter from "../film-filter/Filter";
+import Filter from "../filter/Filter.js";
 import DropMenu from "../drop-menu/DropMenu";
+import CardBox from "../card-box/CardBox"
+
+
 function Content() {
     return (
         <div className="content">
@@ -10,7 +13,7 @@ function Content() {
                 <DropMenu/>
             </div>
             <div className="films">
-
+            <CardBox/>
             </div>
         </div>
     );

@@ -1,6 +1,6 @@
 import React from "react";
 import './Main.css'
-import logo404 from '../../../images/not-found.png'
+import logo404 from '../../../../public/images/not-found.png'
 
 function Main() {
     return (

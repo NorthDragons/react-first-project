@@ -1,0 +1,34 @@
+.card {
+    width: 30%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    margin: 1% 0 1% 0;
+}
+
+.card__img {
+    margin-left: 14%;
+    height: 80%;
+    width: 70%;
+}
+
+.film-title {
+    color: #FFFFFF;
+    padding: 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 20%;
+}
+
+.film-title__h2-name {
+    width: 70%;
+}
+
+.film-title__p-year {
+    width: 30%;
+}
+
+.film-title__p-genre {
+    width: 100%;
+}
