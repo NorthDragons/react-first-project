@@ -1,10 +1,11 @@
 import React from "react";
 import "./Footer.css";
-import { logo } from './../logo/Logo.js';
+import Logo from "../logo/Logo";
+
 function Footer() {
     return (
         <div className="footer">
-            {logo}
+            <Logo/>
         </div>
     );
 }

@@ -11,15 +11,9 @@
     justify-content: space-between;
     width: 100%;
     height: 5%;
+    border-bottom: 1px solid #555555;
 }
 
 .films {
 }
 
-button {
-    color: #FFFFFF;
-    width: 6%;
-    border: transparent;
-    background-color: transparent;
-    margin-left: 0.2%;
-}

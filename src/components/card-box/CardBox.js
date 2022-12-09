@@ -4,14 +4,16 @@ import "./CardBox.css"
 import filmsJson from "./films.json"
 
 function CardBox() {
-    const parse = JSON.parse(filmsJson);
+    const films = filmsJson;
     return (
         <div className="card-box">
-            <h1 className="card-box__h1"> </h1>
-            {filmsJson.map(film =>{
+            {films.length > 0 && <h3 className="card-box__h3">{films.length} - Фильмов найдено </h3>}
+            {films.length > 0 && films.map(film => {
                 return <Card film={film}/>
             })}
+            {films.length <= 0 && <h1 className="card-box__h1">No Movie Found</h1>}
         </div>
     );
 }
+
 export default CardBox;

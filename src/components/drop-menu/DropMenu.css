@@ -7,6 +7,9 @@
 
 .dropdown__button {
     width: 80%;
+    background: transparent;
+    border-color: transparent;
+    color: #FFFFFF;
 }
 
 .dropdown__span {

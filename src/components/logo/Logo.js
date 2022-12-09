@@ -1,3 +1,6 @@
 import './Logo.css';
 
-export const logo= <span className='logo'><span className='logo-bold'>netflix</span>roulette</span>; 
+const Logo = () => {
+    return <span className='logo'><span className='logo-bold'>netflix</span>roulette</span>;
+}
+export default Logo;

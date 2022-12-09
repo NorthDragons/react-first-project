@@ -4,8 +4,6 @@ import Banner from './components/banner/Banner';
 import Content from "./components/content/Content";
 import ErrorBoundary from "./components/error-boundary/ErrorBoundary.js"
 
-const testarr = [{id: 1}]
-
 
 function App() {
     return (

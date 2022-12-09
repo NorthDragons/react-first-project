@@ -9,8 +9,8 @@ function Card(props) {
             <div className='film-title'>
                 <h2 className="film-title__h2-name">{props.film.title}</h2>
                 <p className="film-title__p-year">{props.film.year}</p>
-                <p className="film-title__p-genre">{props.film.genre}</p>
             </div>
+            <div className='genre'><p className="film-title__p-genre">{props.film.genre}</p></div>
         </div>
     );
 }

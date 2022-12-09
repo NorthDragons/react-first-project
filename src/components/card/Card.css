@@ -1,23 +1,24 @@
 .card {
     width: 30%;
-    height: 700px;
     display: flex;
     flex-direction: column;
     margin: 1% 0 1% 0;
+    /*background: #F65261;*/
+    align-items: center;
 }
 
 .card__img {
-    margin-left: 14%;
-    height: 80%;
-    width: 70%;
+    height: 100%;
+    width: 100%;
 }
 
 .film-title {
+    width: 80%;
     color: #FFFFFF;
-    padding: 10%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
     height: 20%;
 }
 
@@ -26,10 +27,16 @@
 }
 
 .film-title__p-year {
+    padding: 2%;
     border: 1px solid #FFFFFF;
-    width: 30%;
 }
 
 .film-title__p-genre {
+    color: #FFFFFF;
     width: 100%;
+}
+
+.genre {
+    width: 80%;
+
 }

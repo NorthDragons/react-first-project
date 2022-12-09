@@ -1,24 +1,25 @@
 import React from "react";
 import './Filter.css'
+import Button from "../button/Button";
 
 function Filter() {
     return (
         <div className="filter">
             <ul className="filter__button-group">
                 <li>
-                    <button className='active' role="button">ALL</button>
+                    <Button children={'ALL'} active/>
                 </li>
                 <li>
-                    <button role="button">DOCUMENTARY</button>
+                    <Button children={'DOCUMENTARY'}/>
                 </li>
                 <li>
-                    <button role="button">CCOMEDY</button>
+                    <Button children={'COMEDY'}/>
                 </li>
                 <li>
-                    <button role="button">HORROR</button>
+                    <Button children={'HORROR'}/>
                 </li>
                 <li>
-                    <button role="button">CRIME</button>
+                    <Button children={'CRIME'}/>
                 </li>
             </ul>
         </div>
