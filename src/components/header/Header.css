@@ -1,18 +1,19 @@
 .header {
-    /* display: flex; */
-    /* flex-direction: ; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: transparent;
-    width: 95%;
-    height: 14%;
-    margin: 6px 20px 2px 20px;
+    width: 98%;
+    height: 3vw;
+    padding: 0 1% 0 1%;
 }
 
-button.header__button {
+button.header__button-add {
     font-size: large;
     background-color: #555555;
     float: right;
     height: 80%;
-    width: 15%;
+    width: 13%;
     color: #F65261;
     border: 1px solid #444343;
     border-radius: 3px;

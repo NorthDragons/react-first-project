@@ -1,19 +1,22 @@
+
 .content {
-    width: 100vw;
-    min-height: 60%;
+    min-height: 70%;
     display: flex;
     flex-direction: column;
+    padding: 0 20px;
 }
 
 .tool-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
-    height: 5%;
-    border-bottom: 1px solid #555555;
+    padding: 0 1%;
+    flex-wrap: wrap;
 }
 
 .films {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2%;
 }
 

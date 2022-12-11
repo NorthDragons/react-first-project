@@ -1,6 +1,8 @@
-.filter{
+.filter {
     margin-left: 1%;
+    width: 80%;
 }
+
 .filter__button-group {
     list-style: none;
     margin-left: 1%;
@@ -26,13 +28,14 @@
     content: none
 }
 
-.filter__button-group button{
+.filter__button-group button {
     color: #FFFFFF;
     width: 6%;
     border: transparent;
     background-color: transparent;
     margin-left: 0.2%;
 }
+
 .filter__button-group button:visited {
     color: #FFFFFF;
 }
@@ -43,9 +46,18 @@ button:hover {
 }
 
 @media (max-width: 550px) {
-    .filter__button-group {padding-top: 0;}
-    .filter__button-group li {display: block;}
-    .filter__button-group li:after {content: none;}
+    .filter__button-group {
+        padding-top: 0;
+    }
+
+    .filter__button-group li {
+        display: block;
+    }
+
+    .filter__button-group li:after {
+        content: none;
+    }
+
     .filter__button-group button {
         padding: 25px 0 20px;
         margin: 0 30px;
