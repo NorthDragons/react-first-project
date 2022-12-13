@@ -1,0 +1,23 @@
+.button-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    height: 10%;
+    width: 80%;
+}
+
+.button-group__button{
+    margin: 3%;
+    border: 1px solid #F65261;
+    width: 30%;
+    height: 50%;
+}
+
+.submit{
+    margin-right: 0;
+    background-color: #F65261;
+}
+.submit:hover{
+    color: #232323;
+}

@@ -1,4 +1,5 @@
 .card {
+    position: relative;
     width: 30%;
     display: flex;
     flex-direction: column;
@@ -8,11 +9,8 @@
 }
 
 
-
-.card__img-button {
-    background-image: url(../../../public/images/circle-button.png);
-}
 .card__img {
+    z-index: 99;
     height: 100%;
     width: 100%;
 }
@@ -45,3 +43,20 @@
     width: 80%;
 
 }
+
+.edit-button {
+
+    z-index: 100;
+    background-image: url("../../../../public/images/circle-button.png");
+    background-color: #424242;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 22px;
+    width: 7%;
+    height: 5%;
+}
+.edit-button:hover{
+    border: 2px solid #232323;
+}
+

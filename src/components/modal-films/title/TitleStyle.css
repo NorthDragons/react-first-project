@@ -1,0 +1,8 @@
+.title {
+    padding-left: 5%;
+    width: 85%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+}

@@ -7,18 +7,28 @@ import {createPortal} from "react-dom";
 import FilmsModal from "./components/modal-films/FilmsModal.js";
 
 
-function App() {
+class App extends React.Component {
+    // state = {
+    //     isModalOpen: true
+    // }
+    //
+    // toggleModal = () => {
+    //     this.setState(state => ({isModalOpen: !state.isModalOpen}))
+    // }
+    render() {
+        return (
+            <ErrorBoundary>
+                <React.Fragment>
+                    <Banner onClick={this.toggleModal}/>
+                    <Content/>
+                    <Footer/>
+                    {/*{this.state.isModalOpen && <FilmsModal onClose={this.toggleModal}/>}*/}
+                </React.Fragment>
+            </ErrorBoundary>
+        );
+    }
 
-    return (
-        <ErrorBoundary>
-            <React.Fragment>
-                {/*<Banner/>*/}
-                {/*<Content/>*/}
-                {/*<Footer/>*/}
-                <FilmsModal/>
-            </React.Fragment>
-        </ErrorBoundary>
-    );
+
 }
 
 export default App;

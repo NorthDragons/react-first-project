@@ -3,7 +3,7 @@ import './ButtonGroupStyle.css'
 
 export default ()=>{
     return(
-        <div className='component button-group'>
+        <div className='button-group'>
             <button className='button-group__button' role='button'>RESET</button>
             <button className='button-group__button submit' role='button'>SUBMIT</button>
         </div>
