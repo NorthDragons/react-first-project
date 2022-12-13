@@ -1,6 +1,6 @@
 
 .content {
-    min-height: 70%;
+    min-height: 45vh;
     display: flex;
     flex-direction: column;
     padding: 0 20px;

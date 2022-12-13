@@ -7,6 +7,11 @@
     align-items: center;
 }
 
+
+
+.card__img-button {
+    background-image: url(../../../public/images/circle-button.png);
+}
 .card__img {
     height: 100%;
     width: 100%;

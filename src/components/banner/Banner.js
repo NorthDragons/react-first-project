@@ -4,11 +4,11 @@ import SearchForm from "../search-block/SearchForm"
 import './Banner.css'
 
 
-function Banner() {
+function Banner(props) {
     return (
         <div className="banner">
             <Header showButton={true} />
-            <SearchForm />
+            <SearchForm films={props.films} />
         </div>
     );
 }

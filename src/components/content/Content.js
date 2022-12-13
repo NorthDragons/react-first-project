@@ -5,13 +5,11 @@ import DropMenu from "../drop-menu/DropMenu";
 import CardBox from "../card-box/CardBox"
 import ToolBar from "../tool-bar/ToolBar"
 
-function Content() {
+function Content(props) {
     return (
         <div className="content">
             <ToolBar/>
-            <div className="films">
-            <CardBox/>
-            </div>
+            <CardBox films={props.films}/>
         </div>
     );
 }

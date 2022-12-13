@@ -1,0 +1,38 @@
+[
+  {
+    "title": "TITLE",
+    "name": "title",
+    "type": "text",
+    "placeholder": "Title here"
+  },
+  {
+    "title": "RELEASE DATE",
+    "name": "date",
+    "type": "date",
+    "placeholder": "Select Date"
+  },
+  {
+    "title": "MOVIE URL",
+    "name": "url",
+    "type": "text",
+    "placeholder": "Movie URL here"
+  },
+  {
+    "title": "GENRE",
+    "name": "genre",
+    "type": "text",
+    "placeholder": "Select Genre"
+  },
+  {
+    "title": "OVERVIEW",
+    "name": "overview",
+    "type": "text",
+    "placeholder": "Overview here"
+  },
+  {
+    "title": "RUNTIME",
+    "name": "runtime",
+    "type": "text",
+    "placeholder": "Runtime here"
+  }
+]
