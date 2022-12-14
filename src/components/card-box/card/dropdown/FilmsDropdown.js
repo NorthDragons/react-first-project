@@ -8,20 +8,22 @@ import actionList from "../../../modal-button/ActionList";
 
 class DropDown extends React.Component {
     state = {
-        actionList: true
+        isModalOpen: false,
     }
-    toggleActionList = () => {
-        this.setState(state => ({actionList: !this.state.actionList}))
+
+    toggleModalAction = () => {
+        this.setState(state => ({isModalOpen: !state.isModalOpen}))
     }
+
 
     render() {
         return (
             <div className="films-dropdown" id={'films-dropdown'}>
                 <button
-                    className="dropdown__button" type="button" onClick={this.toggleActionList}><img
+                    className="dropdown__button" type="button" onClick={this.toggleModalAction}><img
                     src="/images/circle-button.png" alt="U"/>
                 </button>
-                {actionList && <ActionList onClose={this.toggleActionList}/>}
+                {this.state.isModalOpen && <ActionList onClose={this.toggleModalAction}/>}
             </div>
         )
     }
