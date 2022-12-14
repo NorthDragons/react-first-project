@@ -1,5 +1,5 @@
 
-.dropdown {
+.sort-dropdown {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -12,36 +12,36 @@ button {
     background-color: transparent;
 }
 
-.dropdown__button {
+.sort-dropdown__button {
     font-size: calc((1vw + 1vh) * 0.6);
     position: relative;
 }
 
-.dropdown__span {
+.sort-dropdown__span {
     color: #FFFFFF;
     font-size: calc((1vw + 1vh) * 0.6);
     margin-right: 10px;
 }
 
-.dropdown-content {
+.sort-dropdown-content {
     width: 100%;
     display: none;
     background: #424242;
 }
 
-.dropdown:hover .dropdown-content {
+.sort-dropdown:hover .sort-dropdown-content {
     position: absolute;
     display: flex;
     flex-direction: column;
 }
 
-.dropdown-content a {
+.sort-dropdown-content a {
     color: #FFFFFF;
     padding: 5px;
     text-decoration: none;
 }
 
-.dropdown-content a:hover {
+.sort-dropdown-content a:hover {
     color: #FFFFFF;
     background-color: #F65261;
 }

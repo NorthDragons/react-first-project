@@ -1,10 +1,10 @@
 import React from "react";
 import './ButtonGroupStyle.css'
 
-export default ()=>{
-    return(
+export default (props) => {
+    return (
         <div className='button-group'>
-            <button className='button-group__button' role='button'>RESET</button>
+            {props.showReset && <button className='button-group__button' role='button'>RESET</button>}
             <button className='button-group__button submit' role='button'>SUBMIT</button>
         </div>
     );

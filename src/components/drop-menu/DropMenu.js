@@ -4,10 +4,10 @@ import Button from "../button/Button";
 
 function DropMenu() {
     return (
-        <div className="dropdown">
-            <span className="dropdown__span"> Sort By:</span>
-            <Button className="dropdown__button">RELEASE DATE
-                <div className="dropdown-content">
+        <div className="sort-dropdown">
+            <span className="sort-dropdown__span"> Sort By:</span>
+            <Button onClick={()=>{}} className="sort-dropdown__button">RELEASE DATE
+                <div className="sort-dropdown-content">
                     <a href="">THMTH</a>
                     <a href="">THMTH</a>
                     <a href="">THMTH</a>

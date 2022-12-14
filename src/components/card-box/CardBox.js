@@ -2,22 +2,9 @@ import React, {useState} from "react";
 import Card from "./card/Card";
 import "./CardBox.css"
 import filmsJson from "./films.json";
-// export function searchFilms(searchValue) {
-//     searchFilms1(searchValue);
-// }
 
 function CardBox() {
     let filmsMock = filmsJson;
-
-    // function searchFilms1(searchValue) {
-    //     console.log("starts")
-    //     const result = filmsJson.filter(function (film) {
-    //         return film.title.includes(searchValue);
-    //     });
-    //     setValue(result);
-    //     // filmsMock = result
-    //     console.log(filmsMock)
-    // }
 
     return (
         <div className="card-box">
