@@ -31,7 +31,7 @@ function ActionList(props) {
                     Delete
                 </Button>
                 {isModalEdit &&
-                    <FilmsModal title={"EDIT MOVIE"} input={addInputProps} filmId={props.filmId}
+                    <FilmsModal title={"EDIT MOVIE"} input={addInputProps} filmId={props.id}
                                 onClose={toggleEditModal}/>}
                 {isModalDelete &&
                     <FilmsModal title={"DELETE MOVIE"} input={addInputProps} del={true}

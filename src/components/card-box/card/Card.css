@@ -32,6 +32,7 @@
 .film-title__p-year {
     padding: 2%;
     border: 1px solid #FFFFFF;
+    border-radius: 10px;
 }
 
 .film-title__p-genre {

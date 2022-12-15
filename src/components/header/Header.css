@@ -8,7 +8,7 @@
     padding: 0 1% 0 1%;
 }
 
-button.header__button-add {
+.header__button-add {
     font-size: large;
     background-color: #555555;
     float: right;
@@ -18,4 +18,8 @@ button.header__button-add {
     border: 1px solid #444343;
     border-radius: 3px;
     opacity: 0.8;
+}
+.header__button-add:hover {
+    cursor: pointer;
+    background-color: #424242;
 }
