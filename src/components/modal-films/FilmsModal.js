@@ -14,7 +14,7 @@ function Modal(props) {
                         <div className={'title'}>
                             <h1>{props.title}</h1>
                         </div>
-                        {props.filmId!=null&&<div className={'title'}>
+                        {props.filmId != null && <div className={'title'}>
                             <p className='component__title'>MOVIE ID</p>
                             <p>{props.filmId}</p>
                         </div>}
@@ -58,7 +58,7 @@ function Modal(props) {
         return (ReactDOM.createPortal(
                 <div>
                     <div className={'background'}></div>
-                    <div className={'modal'}>
+                    <div className={'delete-modal'}>
                         <button className='title__cansel-button' onClick={props.onClose}>X</button>
                         <div className={'title'}>
                             <h1>DELETE MOVIE</h1>

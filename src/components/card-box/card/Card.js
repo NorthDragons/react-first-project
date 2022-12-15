@@ -7,7 +7,7 @@ function Card(props) {
 
     return (
         <div className="card">
-            <FilmsDropdown filmId={Math.ceil(Math.random() * 100)}/>
+            <FilmsDropdown id={props.films.id}/>
             <img src={props.films.image} alt="photo" className="card__img"/>
             <div className='film-title'>
                 <h2 className="film-title__h2-name">{props.films.title}</h2>

@@ -37,7 +37,7 @@ function ActionList(props) {
                     <FilmsModal title={"DELETE MOVIE"} input={addInputProps} del={true}
                                 onClose={toggleDeleteModal}/>}
             </div>
-            , document.getElementById('films-dropdown')
+            , document.getElementById(props.id)
         )
 
     )
