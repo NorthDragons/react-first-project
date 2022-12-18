@@ -1,10 +1,10 @@
 import React from "react";
 import "./FilmsDropdownStyle.css"
-import FilmsModal from "../../../modal-films/FilmsModal";
-import addInputProps from "../../../header/add-components.json";
-import Button from "../../../button/Button";
-import ActionList from "../../../modal-button/ActionList";
-import actionList from "../../../modal-button/ActionList";
+import FilmsModal from "../../modal-films/FilmsModal";
+import addInputProps from "../../header/add-components.json";
+import Button from "../../button/Button";
+import ActionList from "../../modal-button/ActionList";
+import actionList from "../../modal-button/ActionList";
 
 class DropDown extends React.Component {
 

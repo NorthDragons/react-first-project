@@ -2,9 +2,52 @@ import React, {useState} from "react";
 import './FilmModal.css'
 import ReactDOM from "react-dom";
 import ButtonGroup from "./button-group/ButtonGroup";
-import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
-import Select from 'react-select'
+import Select, { StylesConfig } from "react-select";
+
+const options = [
+    {value: "documentary", label: "Documentary"},
+    {value: "comedy", label: "Comedy"},
+    {value: "horror", label: "Horror"},
+    {value: "crime", label: "Crime"}
+]
+const colourStyles: StylesConfig<> = {
+    control: (styles) => ({...styles, backgroundColor: "#444343"}),
+    option: (styles) => {
+        return {
+            ...styles,
+            backgroundColor: "#444343",
+            color: "#FFFFFF",
+            cursor: "pointer",
+            width:"100%",
+            ":active": {
+                ...styles[":active"],
+                backgroundColor: "#FFFFFF"
+            },
+            ":hover": {
+                backgroundColor: "#555555"
+            }
+        };
+    },
+    multiValue: (styles, {data}) => {
+        return {
+            ...styles,
+            backgroundColor: "#555555"
+        };
+    },
+    multiValueLabel: (styles, {data}) => ({
+        ...styles,
+        color: "#FFFFFF"
+    }),
+    multiValueRemove: (styles, {data}) => ({
+        ...styles,
+        color: "#FFFFFF",
+        ":hover": {
+            backgroundColor: "white"
+        }
+    })
+};
+
 
 function Modal(props) {
     const [date, setDate] = useState(null);
@@ -47,13 +90,14 @@ function Modal(props) {
                             </div>
                             <div className="component">
                                 <p className='component__title'>GENRE</p>
-                                <select className={"component__select"} >
-                                    <option>Choose genre:</option>
-                                    <option>Documentary</option>
-                                    <option>Comedy</option>
-                                    <option>Horror</option>
-                                    <option>Crime</option>
-                                </select>
+                                <Select
+                                    className={'component__select'}
+                                    closeMenuOnSelect={false}
+                                    placeholder={"Choose genre:"}
+                                    isMulti
+                                    options={options}
+                                    styles={colourStyles}
+                                />
                             </div>
                             <div className="component">
                                 <p className='component__title'>OVERVIEW</p>

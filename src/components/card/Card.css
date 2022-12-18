@@ -48,7 +48,7 @@
 .edit-button {
 
     z-index: 100;
-    background-image: url("../../../../public/images/circle-button.png");
+    background-image: url("../../../public/images/circle-button.png");
     background-color: #424242;
     background-size: cover;
     background-repeat: no-repeat;
