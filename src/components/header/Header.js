@@ -23,7 +23,7 @@ class Header extends React.Component {
                         + ADD MOVIE
                     </Button>}
                 {this.state.isModalOpen &&
-                    <FilmsModal title={"ADD MOVIE"} input={addInputProps} onClose={this.toggleModal}/>}
+                    <FilmsModal title={"ADD MOVIE"} className={"modal"} input={addInputProps} onClose={this.toggleModal}/>}
             </div>
         );
     }

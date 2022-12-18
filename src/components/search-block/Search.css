@@ -27,6 +27,11 @@
     width: 50%;
     height: 40%;
 }
+.button:hover {
+    color: #FFFFFF;
+    opacity: 1;
+    cursor: pointer;
+}
 .button {
     height: 30%;
     width: 18%;

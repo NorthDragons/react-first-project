@@ -31,10 +31,10 @@ function ActionList(props) {
                     Delete
                 </Button>
                 {isModalEdit &&
-                    <FilmsModal title={"EDIT MOVIE"} input={addInputProps} filmId={props.id}
+                    <FilmsModal title={"EDIT MOVIE"} className={'modal'} input={addInputProps} filmId={props.id}
                                 onClose={toggleEditModal}/>}
                 {isModalDelete &&
-                    <FilmsModal title={"DELETE MOVIE"} input={addInputProps} del={true}
+                    <FilmsModal title={"DELETE MOVIE"} className={'modal-del'} input={addInputProps} del={true}
                                 onClose={toggleDeleteModal}/>}
             </div>
             , document.getElementById(props.id)
