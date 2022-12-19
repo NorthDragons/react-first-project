@@ -28,14 +28,10 @@ function Modal(props) {
                             </div>
                             <div className="component">
                                 <p className='component__title'>RELEASE DATE</p>
-                                <input
-                                    id={"date"}
-                                    type="text"
-                                    onChange={(e) => console.log(e.target.value)}
-                                    placeholder={"Select Date"}
-                                    className="component__input"
-                                    onFocus={(e) => (e.target.type = "date")}
-                                    onBlur={(e) => (e.target.type = "text")}
+                                <input id={"date"} type="text" onChange={(e) => console.log(e.target.value)}
+                                       placeholder={"Select Date"} className="component__input"
+                                       onFocus={(e) => (e.target.type = "date")}
+                                       onBlur={(e) => (e.target.type = "text")}
                                 />
                             </div>
                             <div className="component">
@@ -45,7 +41,7 @@ function Modal(props) {
                             </div>
                             <div className="component">
                                 <p className='component__title'>GENRE</p>
-                                <Genre />
+                                <Genre/>
                             </div>
                             <div className="component">
                                 <p className='component__title'>OVERVIEW</p>
