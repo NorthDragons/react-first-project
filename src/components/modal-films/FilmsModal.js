@@ -1,56 +1,10 @@
-import React, {useState} from "react";
+import React from "react";
 import './FilmModal.css'
 import ReactDOM from "react-dom";
 import ButtonGroup from "./button-group/ButtonGroup";
-import "react-datepicker/dist/react-datepicker.css";
-import Select, { StylesConfig } from "react-select";
-
-const options = [
-    {value: "documentary", label: "Documentary"},
-    {value: "comedy", label: "Comedy"},
-    {value: "horror", label: "Horror"},
-    {value: "crime", label: "Crime"}
-]
-const colourStyles: StylesConfig<> = {
-    control: (styles) => ({...styles, backgroundColor: "#444343"}),
-    option: (styles) => {
-        return {
-            ...styles,
-            backgroundColor: "#444343",
-            color: "#FFFFFF",
-            cursor: "pointer",
-            width:"100%",
-            ":active": {
-                ...styles[":active"],
-                backgroundColor: "#FFFFFF"
-            },
-            ":hover": {
-                backgroundColor: "#555555"
-            }
-        };
-    },
-    multiValue: (styles, {data}) => {
-        return {
-            ...styles,
-            backgroundColor: "#555555"
-        };
-    },
-    multiValueLabel: (styles, {data}) => ({
-        ...styles,
-        color: "#FFFFFF"
-    }),
-    multiValueRemove: (styles, {data}) => ({
-        ...styles,
-        color: "#FFFFFF",
-        ":hover": {
-            backgroundColor: "white"
-        }
-    })
-};
-
+import Genre from "./genre-dropdown/Genre";
 
 function Modal(props) {
-    const [date, setDate] = useState(null);
     return (
         ReactDOM.createPortal(
             <React.Fragment>
@@ -77,7 +31,7 @@ function Modal(props) {
                                 <input
                                     type="text"
                                     onChange={(e) => console.log(e.target.value)}
-                                    placeholder={"Release date here"}
+                                    placeholder={"Select Date"}
                                     className="component__input"
                                     onFocus={(e) => (e.target.type = "date")}
                                     onBlur={(e) => (e.target.type = "text")}
@@ -90,14 +44,7 @@ function Modal(props) {
                             </div>
                             <div className="component">
                                 <p className='component__title'>GENRE</p>
-                                <Select
-                                    className={'component__select'}
-                                    closeMenuOnSelect={false}
-                                    placeholder={"Choose genre:"}
-                                    isMulti
-                                    options={options}
-                                    styles={colourStyles}
-                                />
+                                <Genre />
                             </div>
                             <div className="component">
                                 <p className='component__title'>OVERVIEW</p>

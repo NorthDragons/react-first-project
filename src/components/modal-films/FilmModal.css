@@ -82,7 +82,10 @@
     font-weight: 900;
     font-size: 17px;
     background-color: #555555;
-
+    outline: none;
+}
+.component__input:active {
+    border: none;
 }
 
 .component__select {
@@ -163,108 +166,4 @@ cursor: pointer;
 .modal-del .button-group button{
 height: 100%;
 }
-
-
-/*.modal .title {*/
-/*    padding-left: 5%;*/
-/*    width: 85%;*/
-/*    height: 15%;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    color: #FFFFFF;*/
-/*}*/
-
-
-/*.title__cansel-button {*/
-/*    height: 4%;*/
-/*    margin-left: 85%;*/
-/*}*/
-
-
-/*.component {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    justify-content: center;*/
-/*    align-items: start;*/
-/*    width: 80%;*/
-/*}*/
-
-/*.component__title {*/
-/*    color: #F65261;*/
-/*}*/
-
-/*.component__input {*/
-/*    width: 100%;*/
-/*    height: 30px;*/
-/*    background-color: #555555;*/
-/*    outline: none;*/
-/*    border: black;*/
-/*    border-radius: 5px;*/
-/*    color: #FFFFFF;*/
-/*    font-family: 'Courier New', Courier, monospace;*/
-/*    font-weight: 900;*/
-/*    font-size: 17px;*/
-/*}*/
-
-/*.background {*/
-/*    position: fixed;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    background-color: #424242;*/
-/*    z-index: 101;*/
-/*    opacity: 0.8;*/
-/*}*/
-
-
-/*.delete-modal{*/
-/*    position: fixed;*/
-/*    top: 25%;*/
-/*    right: 35%;*/
-/*    width: 30%;*/
-/*    height: 40%;*/
-/*    background-color: #232323;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    justify-content: start;*/
-/*    align-items: center;*/
-/*    border-radius: 20px;*/
-/*    z-index: 102;*/
-/*    opacity: 1;*/
-/*}*/
-
-/*.close-div{*/
-/*    width: 97%;*/
-/*    height: 10%;*/
-/*    display: flex;*/
-/*    justify-content: end;*/
-/*    align-items: center;*/
-/*    padding-right: 3%;*/
-/*}*/
-
-/*.delete-modal .title {*/
-/*    padding-left: 5%;*/
-/*    width: 95%;*/
-/*    height: 65%;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    color: #FFFFFF;*/
-/*}*/
-
-/*.content__select{*/
-/*    width: 100%;*/
-/*    height: 35px;*/
-/*    background-color: #555555;*/
-/*    border: #555555;*/
-/*    color: #FFFFFF;*/
-/*    font-family: 'Courier New', Courier, monospace;*/
-/*    font-weight: 900;*/
-/*    font-size: 17px;*/
-/*}*/
-/*.content__select option{*/
-/*    background-color: #232323;*/
-/*}*/
 
