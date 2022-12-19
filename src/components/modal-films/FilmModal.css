@@ -60,16 +60,8 @@
     margin-left: 2%;
     color: #FFFFFF;
 }
-.component__input-date {
-    width: 100%;
-    height: 30px;
-    border: black;
-    border-radius: 2px;
-    color: #FFFFFF;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 900;
-    font-size: 17px;
-    background-color: #555555;
+.component__input #date {
+    background-image: url("../../../public/images/calendar-7-16.ico");
 }
 
 .component__input {

@@ -29,6 +29,7 @@ function Modal(props) {
                             <div className="component">
                                 <p className='component__title'>RELEASE DATE</p>
                                 <input
+                                    id={"date"}
                                     type="text"
                                     onChange={(e) => console.log(e.target.value)}
                                     placeholder={"Select Date"}
