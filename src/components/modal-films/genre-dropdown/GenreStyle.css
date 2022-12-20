@@ -18,7 +18,6 @@
     top: 46%;
     right: 2%;
     content: "";
-    z-index: 98;
 }
 
 .selectBox:hover .checkboxes {
@@ -35,7 +34,6 @@
     top: 46%;
     right: 2%;
     content: "";
-    z-index: 98;
 }
 
 .selectBox__select {
@@ -66,7 +64,6 @@
     padding: 1% 0 0 0;
     height: 8vw;
     color: #FFF;
-    z-index: 104;
     position: absolute;
     width: 24.7vw;
 }
@@ -98,6 +95,4 @@
 
 label input {
     display: flex;
-    /*justify-content: center;*/
-    /*align-items: start;*/
 }

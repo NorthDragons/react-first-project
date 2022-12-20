@@ -7,8 +7,8 @@ import './Banner.css'
 function Banner(props) {
     return (
         <div className="banner">
-            <Header showButton={true} onClick={props.onClick}/>
-            <SearchForm films={props.films} />
+            <Header showButton={true}/>
+            <SearchForm/>
         </div>
     );
 }

@@ -7,19 +7,19 @@ function Filter() {
         <div className="filter">
             <ul className="filter__button-group">
                 <li>
-                    <Button children={'ALL'} active/>
+                    <Button active>ALL</Button>
                 </li>
                 <li>
-                    <Button children={'DOCUMENTARY'}/>
+                    <Button>DOCUMENTARY</Button>
                 </li>
                 <li>
-                    <Button children={'COMEDY'}/>
+                    <Button>COMEDY</Button>
                 </li>
                 <li>
-                    <Button children={'HORROR'}/>
+                    <Button>HORROR</Button>
                 </li>
                 <li>
-                    <Button children={'CRIME'}/>
+                    <Button>CRIME</Button>
                 </li>
             </ul>
         </div>

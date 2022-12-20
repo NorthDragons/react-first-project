@@ -3,6 +3,7 @@ import {useState} from "react";
 
 function CheckBox() {
     return (
+
         <div className="multiselect">
             <div className="selectBox">
                 <select className={"selectBox__select"}>
@@ -20,7 +21,6 @@ function CheckBox() {
                         <input type="checkbox" id="crime"/><span>Crime</span></label>
                 </div>
             </div>
-
         </div>
     )
 }

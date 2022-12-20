@@ -9,7 +9,7 @@ function Content(props) {
     return (
         <div className="content">
             <ToolBar/>
-            <CardBox films={props.films}/>
+            <CardBox/>
         </div>
     );
 }

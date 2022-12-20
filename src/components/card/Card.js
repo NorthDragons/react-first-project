@@ -7,13 +7,13 @@ function Card(props) {
 
     return (
         <div className="card">
-            <FilmsDropdown id={props.films.id}/>
-            <img src={props.films.image} alt="photo" className="card__img"/>
+            <FilmsDropdown film={props.film}/>
+            <img src={props.film.image} className="card__img" alt={"some photo"}/>
             <div className='film-title'>
-                <h2 className="film-title__h2-name">{props.films.title}</h2>
-                <p className="film-title__p-year">{props.films.year}</p>
+                <h2 className="film-title__h2-name">{props.film.title}</h2>
+                <p className="film-title__p-year">{props.film.date}</p>
             </div>
-            <div className='genre'><p className="film-title__p-genre">{props.films.genre}</p></div>
+            <div className='genre'><p className="film-title__p-genre">{props.film.genre}</p></div>
         </div>
     );
 }

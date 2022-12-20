@@ -2,57 +2,81 @@
   {
     "id": 1,
     "title": "Avatar",
-    "year": "2009",
+    "date": "2009",
     "genre": "Action, Adventure, Fantasy",
-    "image": "/images/img_1.png"
+    "image": "/images/img_1.png",
+    "url": "url.com",
+    "overview": "most interesting movie",
+    "runtime": "2h"
   },
   {
     "id": 2,
     "title": "I Am Legend",
-    "year": "2007",
+    "date": "2007",
     "genre": "Drama, Horror, Sci-Fi",
-    "image": "/images/img_2.png"
+    "image": "/images/img_2.png",
+    "url": "url.com",
+    "overview": "most interesting movie",
+    "runtime": "2h"
   },
   {
     "id": 3,
     "title": "The Avengers",
-    "year": "2012",
+    "date": "2012",
     "genre": "Action, Sci-Fi, Thriller",
-    "image": "/images/img_3.png"
+    "image": "/images/img_3.png",
+    "url": "url.com",
+    "overview": "most interesting movie",
+    "runtime": "2h"
   },
   {
     "id": 4,
     "title": "The Wolf of Wall Street",
-    "year": "2013",
+    "date": "2013",
     "genre": "Biography, Comedy, Crime",
-    "image": "/images/img_4.png"
+    "image": "/images/img_4.png",
+    "url": "url.com",
+    "overview": "most interesting movie",
+    "runtime": "2h"
   },
   {
     "id": 5,
     "title": "Interstellar",
-    "year": "2014",
+    "date": "2014",
     "genre": "Adventure, Drama, Sci-Fi",
-    "image": "/images/img_5.png"
+    "image": "/images/img_5.png",
+    "url": "url.com",
+    "overview": "most interesting movie",
+    "runtime": "2h"
   },
   {
     "id": 6,
     "title": "Game of Thrones",
-    "year": "2011",
+    "date": "2011",
     "genre": "Adventure, Drama, Fantasy",
-    "image": "/images/img_6.png"
+    "image": "/images/img_6.png",
+    "url": "url.com",
+    "overview": "most interesting movie",
+    "runtime": "2h"
   },
   {
     "id": 7,
     "title": "Vikings",
-    "year": "2013",
+    "date": "2013",
     "genre": "Action, Drama, History",
-    "image": "/images/img_7.png"
+    "image": "/images/img_7.png",
+    "url": "url",
+    "overview": "most interesting movie",
+    "runtime": "2h"
   },
   {
     "id": 8,
     "title": "Gotham",
-    "year": "2014",
+    "date": "2014",
     "genre": "Action, Crime, Drama",
-    "image": "/images/img_8.png"
+    "image": "/images/img_8.png",
+    "url": "url",
+    "overview": "most interesting movie",
+    "runtime": "2h"
   }
 ]

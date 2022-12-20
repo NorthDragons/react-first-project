@@ -1,3 +1,13 @@
+.background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: #555555;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+
 .modal {
     position: fixed;
     top: 5%;
@@ -10,8 +20,8 @@
     justify-content: space-evenly;
     align-items: center;
     border-radius: 20px;
-    z-index: 102;
     opacity: 1;
+    z-index: 2;
 }
 
 .modal .title {
@@ -32,7 +42,7 @@
     color: #FFFFFF;
 }
 
-.input-group {
+.body {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,7 +50,7 @@
     height: 70%;
 }
 
-.input-group .component {
+.body .component {
     width: 83%;
     height: 100%;
     display: flex;
@@ -60,6 +70,7 @@
     margin-left: 2%;
     color: #FFFFFF;
 }
+
 .component__input #date {
     background-image: url("../../../public/images/calendar-7-16.ico");
 }
@@ -76,6 +87,7 @@
     background-color: #555555;
     outline: none;
 }
+
 .component__input:active {
     border: none;
 }
@@ -84,13 +96,14 @@
     width: 100%;
     height: 35%;
     background-color: #555555;
-cursor: pointer;
+    cursor: pointer;
     border: #555555;
     color: #FFFFFF;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 900;
     font-size: 17px;
 }
+
 .component__select:hover {
     color: #F65261;
 }
@@ -100,19 +113,36 @@ cursor: pointer;
     background-color: #F65261;
 }
 
-
-
 .modal .button-group {
-    width: 97%;
-    height: 10%;
+    width: 95%;
+    height: 15%;
     display: flex;
-    align-items: start;
-    padding-right: 3%;
+    padding-right: 5%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+}
+
+.button-group__button {
+    margin: 3%;
+    border: 1px solid #F65261;
+    width: 30%;
+    height: 50%;
+    max-height: 50px;
+    border-radius: 5px;
+}
+
+.modal .submit {
+    margin-right: 0;
+    background-color: #F65261;
+}
+
+.modal .submit:hover {
+    color: #232323;
 }
 
 
-
-.modal-del{
+.modal-small {
     position: fixed;
     top: 25%;
     right: 35%;
@@ -124,38 +154,57 @@ cursor: pointer;
     justify-content: space-around;
     align-items: center;
     border-radius: 20px;
-    z-index: 102;
+    z-index: 2;
 }
 
-
-.modal-del .title{
+.modal-small .title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
-    height: 60%;
+    height: 40%;
 }
 
-.modal-del .title__cansel-button {
+.modal-small .title__cansel-button {
     width: 98%;
     text-align: end;
     padding: 3% 2% 0 0;
 }
 
-.modal-del .title h1 {
-    margin: 0 0 0 8%;
-    color: #FFFFFF;
-}
-.modal-del .title p {
-    margin: 3% 0 0 8%;
+.modal-small .title h1 {
+    margin: 0;
     color: #FFFFFF;
 }
 
-.modal-del .button-group {
+.modal-small p {
+    color: #FFFFFF;
+}
+
+.modal-small .body {
+    width: 100%;
+    height: 30%;
+}
+
+.modal-small .button-group {
     width: 97%;
-    height: 40%;
+    height: 30%;
     display: flex;
-    align-items: start;
+    align-items: center;
+    justify-content: end;
     padding-right: 3%;
 }
-.modal-del .button-group button{
-height: 100%;
+
+.modal-small .button-group__button {
+    width: 25%;
+    height: 70%;
+    background-color: #F65261;
+    color: #FFFFFF;
+
 }
+
+.modal-small .button-group__button:hover {
+    color: #232323;
+    cursor: pointer;
+}
+
 

@@ -8,7 +8,7 @@ const Button = ({children, onClick, className, disabled, active}) => {
         'brn', className, {active}
     );
     return (
-        <button className={classes} disabled={disabled} onClick={onClick}>{children}</button>
+        <button role={"button"} className={classes} disabled={disabled} onClick={onClick}>{children}</button>
     );
 }
 

@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./FilmsDropdownStyle.css"
 import ActionList from "../../modal-button/ActionList";
+import Button from "../../button/Button";
 
 function DropDown(props) {
 
@@ -14,12 +15,11 @@ function DropDown(props) {
 
 
     return (
-        <div className="films-dropdown" id={props.id}>
-            <button
-                className="dropdown__button" type="button" onClick={toggleModalAction}><img
-                src="/images/circle-button.png" alt="U"/>
-            </button>
-            {isModalOpen && <ActionList id={props.id} onClose={toggleModalAction}/>}
+        <div className="films-dropdown" id={props.film.id}>
+            <Button className="dropdown__button" type="button" onClick={toggleModalAction}>
+                <img src="/images/circle-button.png" alt="U"/>
+            </Button>
+            <ActionList isModalOpen={isModalOpen} film={props.film} onClose={toggleModalAction}/>
         </div>
     )
 }
