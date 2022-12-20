@@ -6,7 +6,6 @@ import ErrorBoundary from "./components/error-boundary/ErrorBoundary.js"
 import filmsJson from "./components/films.json"
 
 function App() {
-    const [films, setFilms] = useState(filmsJson);
     const [film, setFilm] = useState('');
 
     function setFilmInfo(filmForUpdate) {

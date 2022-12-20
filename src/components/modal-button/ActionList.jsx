@@ -70,7 +70,7 @@ function ActionList(props) {
                     </div>
                     <div className="component">
                         <p className='component__title'>GENRE</p>
-                        <Genre/>
+                        <Genre genre={props.film.genre}/>
                     </div>
                     <div className="component">
                         <p className='component__title'>OVERVIEW</p>
