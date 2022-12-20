@@ -5,7 +5,7 @@ import Logo from "../logo/Logo";
 import FilmsModal from "../modal-films/FilmsModal";
 import Genre from "../modal-films/genre-dropdown/Genre";
 
-function Header(props) {
+function Header(props, {film}) {
 
     let [isModalOpen, setIsModalOpen] = useState(false);
 
