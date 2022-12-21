@@ -4,23 +4,23 @@ import ReactDOM from "react-dom";
 import Button from "../button/Button";
 import PropTypes from "prop-types";
 
-function FilmsModal({className}, {onClose}, {title}, {children}, {hideReset}, {action}) {
+function FilmsModal(props) {
 
     return (
         ReactDOM.createPortal(
             <React.Fragment>
                 <div className={'background'}></div>
-                <div className={className}>
+                <div className={props.className}>
                     <div className={'title'}>
-                        <button className='title__cansel-button' onClick={onClose}>X</button>
-                        <h1>{title}</h1>
+                        <button className='title__cansel-button' onClick={props.onClose}>X</button>
+                        <h1>{props.title}</h1>
                     </div>
                     <div className={'body'}>
-                        {children}
+                        {props.children}
                     </div>
                     <div className='button-group'>
-                        {!hideReset && <button className='button-group__button' role='button'>RESET</button>}
-                        <Button className='button-group__button submit'>{action}</Button>
+                        {!props.hideReset && <button className='button-group__button' role='button'>RESET</button>}
+                        <Button className='button-group__button submit'>{props.action}</Button>
                     </div>
                 </div>
             </React.Fragment>,

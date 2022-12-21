@@ -23,7 +23,7 @@ function Header({showButton}) {
                     + ADD MOVIE
                 </Button>}
             {isModalOpen &&
-                <FilmsModal action={"SAVE"} title={"ADD MOVIE"} className={"modal"} onClose={toggleModal}>
+                <FilmsModal action={"SAVE"} title={"ADD MOVIE"} className={"modal"} onClose={toggleModal} hideReset={false}>
                     <div className="component">
                         <p className='component__title'>TITLE</p>
                         <input name={"title"} type={"text"} className="component__input"
