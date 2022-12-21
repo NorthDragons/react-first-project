@@ -6,12 +6,12 @@
     align-items: center;
 }
 
-.card-border{
+.card-border {
     position: relative;
     width: 30%;
 }
 
-.card:hover{
+.card:hover {
     cursor: pointer;
 }
 
@@ -19,7 +19,6 @@
     height: 700px;
     width: 100%;
 }
-
 
 .film-title {
     width: 80%;
@@ -61,7 +60,8 @@
     width: 7%;
     height: 5%;
 }
-.edit-button:hover{
+
+.edit-button:hover {
     border: 2px solid #232323;
 }
 

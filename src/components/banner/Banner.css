@@ -86,8 +86,9 @@
     height: 6%;
     border-radius: 30px;
 }
+
 .info-card__search-button:hover {
-cursor: pointer;
+    cursor: pointer;
 }
 
 .info-card__search-button img {

@@ -20,12 +20,13 @@ Button.propTypes = {
     active: PropTypes.bool,
 }
 
-Button.defaultProps={
-    children:'Default button',
-    onClick: ()=>{},
-    className:'',
-    disabled:false,
-    active:false,
+Button.defaultProps = {
+    children: 'Default button',
+    onClick: () => {
+    },
+    className: '',
+    disabled: false,
+    active: false,
 }
 
 export default Button;

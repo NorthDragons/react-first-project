@@ -20,22 +20,24 @@
     border-radius: 5px;
 }
 
-.search-elem{
+.search-elem {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 50%;
     height: 40%;
 }
+
 .button:hover {
     color: #FFFFFF;
     opacity: 1;
     cursor: pointer;
 }
+
 .button {
     height: 30%;
     width: 18%;
-    border: 1px solid#F65261;
+    border: 1px solid #F65261;
     border-radius: 5px;
     background-color: #F65261;
     color: white;
@@ -44,7 +46,7 @@
     font-size: large;
 }
 
-.label{
+.label {
     width: 50%;
     height: 10%;
     font-family: 'Courier New', Courier, monospace;
@@ -53,6 +55,7 @@
     text-shadow: 1px 0 10px #424242;
     text-align: start;
 }
-.label h1{
+
+.label h1 {
     margin: 0;
 }

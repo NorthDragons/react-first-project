@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import './Search.css'
 import Button from "../button/Button";
-import CardBox, {searchFilms} from "../card-box/CardBox";
 
 
 function Search() {

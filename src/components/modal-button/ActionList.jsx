@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import Button from "../button/Button";
 import FilmsModal from "../modal-films/FilmsModal";
 import Genre from "../modal-films/genre-dropdown/Genre";
+import PropTypes from "prop-types";
 
 
 function ActionList(props) {
@@ -92,4 +93,9 @@ function ActionList(props) {
     )
 }
 
+ActionList.propTypes = {
+    film: PropTypes.object,
+    onClose: PropTypes.func,
+    isModalOpen: PropTypes.bool
+}
 export default ActionList;

@@ -1,25 +1,20 @@
 import "./GenreStyle.css"
 import {useState} from "react";
+import PropTypes from "prop-types";
 
-function CheckBox(props) {
+function CheckBox({genre}) {
 
-    const [genreValue, setGenreValue] = useState(props.genre ? props.genre : "Select Genre")
-    let [valueSet, setValueSet] = useState(new Set());
+    const [genreValue, setGenreValue] = useState(genre ? genre : "Select Genre")
+    const [valueSet, setValueSet] = useState(new Set());
 
-    function setValue(value) {
-        let valueSetCopy = new Set(valueSet)
-        if (valueSet.size > 0 && valueSetCopy.has(value.target.value)) {
-            if (valueSet.size === 1) {
-                setValueSet(new Set())
-            } else {
-                setValueSet(valueSetCopy.delete(value.target.value))
-            }
+    function setValue(e) {
+        const value = e.target.value;
+        if (valueSet.has(value)) {
+            valueSet.delete(value)
         } else {
-            setValueSet(valueSetCopy.add(value.target.value));
+            setValueSet(valueSet.add(value))
         }
-        console.log(Array.from(valueSet).join(" ").toString())
-        test(valueSet)
-        setGenreValue(Array.from(valueSet).join(", ").toString())
+        setGenreValue(Array.from(valueSet).toString())
     }
 
     return (
@@ -48,4 +43,7 @@ function CheckBox(props) {
     )
 }
 
+CheckBox.propTypes = {
+    genre: PropTypes.string
+}
 export default CheckBox;

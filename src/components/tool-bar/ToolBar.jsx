@@ -1,12 +1,12 @@
 import Filter from "../filter/Filter";
-import DropMenu from "../drop-menu/DropMenu";
+import SortingDropMenu from "./sorting-drop-menu/SortingDropMenu.jsx";
 
 
 function ToolBar() {
     return (
         <div className="tool-bar">
             <Filter/>
-            <DropMenu/>
+            <SortingDropMenu/>
         </div>
     );
 }

@@ -4,8 +4,9 @@ import Button from "../button/Button";
 import Logo from "../logo/Logo";
 import FilmsModal from "../modal-films/FilmsModal";
 import Genre from "../modal-films/genre-dropdown/Genre";
+import PropTypes from "prop-types";
 
-function Header(props, {film}) {
+function Header({showButton}) {
 
     let [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -17,7 +18,7 @@ function Header(props, {film}) {
     return (
         <div className="header">
             <Logo/>
-            {props.showButton &&
+            {showButton &&
                 <Button onClick={toggleModal} className='header__button-add'>
                     + ADD MOVIE
                 </Button>}
@@ -58,6 +59,10 @@ function Header(props, {film}) {
                 </FilmsModal>}
         </div>
     );
+}
+
+Header.propTypes = {
+    showButton: PropTypes.bool
 }
 
 export default Header; 

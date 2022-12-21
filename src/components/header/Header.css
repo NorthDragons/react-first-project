@@ -20,6 +20,7 @@
     border-radius: 3px;
     opacity: 0.8;
 }
+
 .header__button-add:hover {
     cursor: pointer;
     background-color: #424242;
