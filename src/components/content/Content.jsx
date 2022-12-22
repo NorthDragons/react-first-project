@@ -4,11 +4,11 @@ import CardBox from "../card-box/CardBox"
 import ToolBar from "../tool-bar/ToolBar"
 import PropTypes from "prop-types";
 
-function Content(props) {
+function Content({films, onClick}) {
     return (
         <div className="content">
             <ToolBar/>
-            <CardBox films={props.films} onClick={props.onClick}/>
+            <CardBox films={films} onClick={onClick}/>
         </div>
     );
 }

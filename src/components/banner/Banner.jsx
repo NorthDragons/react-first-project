@@ -5,33 +5,36 @@ import './Banner.css'
 import Button from "../button/Button";
 import PropTypes from "prop-types";
 
-function Banner(props) {
+function Banner({film, onClose}) {
     return (
         <div className="banner">
-            {props.film &&
+            {film ?
                 <div className={"film-info"}>
                     <Header/>
                     <div className={"info-card"}>
-                        <Button className={"info-card__search-button"} onClick={props.onClose}>
+                        <Button className={"info-card__search-button"} onClick={onClose}>
                             <img src={"/images/search-icon.png"} alt={"search"}/>
                         </Button>
-                        <img className={"info-card__img"} src={props.film.image} alt={"photo"}/>
+                        <img className={"info-card__img"} src={film.image} alt={"photo"}/>
                         <div className={"info"}>
-                            <h1 className={"title__h1"}>{props.film.title}<span>{props.film.rate}</span></h1>
-                            <p className={"title__p"}>{props.film.date}<span>{props.film.runtime}</span></p>
-                            <p className={"title__p-overview"}>{props.film.overview}</p>
+                            <h1 className={"title__h1"}>{film.title}<span>{film.rate}</span></h1>
+                            <p className={"title__p"}>{film.date}<span>{film.runtime}</span></p>
+                            <p className={"title__p-overview"}>{film.overview}</p>
                         </div>
                     </div>
-                </div>
+                </div> :
+                <Header showButton={true}/>
             }
-            <Header showButton={true}/>
             <SearchForm/>
         </div>
     );
 }
 
 Banner.propTypes = {
-    film: PropTypes.object,
+    film: PropTypes.shape(
+        {
+            title: PropTypes.string,
+        }),
     onClose: PropTypes.func
 }
 

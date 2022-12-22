@@ -6,14 +6,15 @@ import Genre from "../modal-films/genre-dropdown/Genre";
 import PropTypes from "prop-types";
 
 
-function ActionList(props) {
+function ActionList({onClose, isModalOpen, film}) {
 
     let [isModalEdit, setIsModalEdit] = useState(false);
     let [isModalDelete, setIsModalDelete] = useState(false);
+    let [dateValue, setDateValue] = useState(film.date);
 
     function openEditModal() {
         setIsModalEdit(true)
-        props.onClose();
+        onClose();
     }
 
     function closeEditModal() {
@@ -22,7 +23,7 @@ function ActionList(props) {
 
     function openDeleteModal() {
         setIsModalDelete(true)
-        props.onClose();
+        onClose();
     }
 
     function closeDeleteModal() {
@@ -31,9 +32,9 @@ function ActionList(props) {
 
     return (
         <>
-            {props.isModalOpen &&
+            {isModalOpen &&
                 <div className={"action-list"}>
-                    <Button onClick={props.onClose} className='action-list__close-button'
+                    <Button onClick={onClose} className='action-list__close-button'
                             role="button"><span>X</span></Button>
                     <Button onClick={openEditModal} className='action-list__button'>
                         Edit
@@ -44,44 +45,47 @@ function ActionList(props) {
                 </div>
             }
             {isModalEdit &&
-                <FilmsModal title={"EDIT MOVIE"} className={'modal'} action={"SUBMIT"} filmId={props.id}
+                <FilmsModal title={"EDIT MOVIE"} className={'modal'} action={"SUBMIT"} filmId={film.id}
                             onClose={closeEditModal}>
                     <div className={'component'}>
                         <p className='component__title'>MOVIE ID</p>
-                        <p className={"component__p-id"}>{props.film.id}</p>
+                        <p className={"component__p-id"}>{film.id}</p>
                     </div>
                     <div className="component">
                         <p className='component__title'>TITLE</p>
                         <input name={"title"} type={"text"} className="component__input"
-                               placeholder={"Title here"} value={props.film.title}/>
+                               placeholder={"Title here"} value={film.title}/>
                     </div>
                     <div className="component">
                         <p className='component__title'>RELEASE DATE</p>
-                        <input id={"date"} value={props.film.date}
-                               type="text" onChange={(e) => console.log(e.target.value)}
+                        <input id={"date"} value={dateValue}
+                               type="text"
                                placeholder={"Select Date"} className="component__input"
                                onFocus={(e) => (e.target.type = "date")}
                                onBlur={(e) => (e.target.type = "text")}
+                               onChange={(e) => {
+                                   setDateValue(e.target.value)
+                               }}
                         />
                     </div>
                     <div className="component">
                         <p className='component__title'>MOVIE URL</p>
                         <input name="url" type="text" className="component__input"
-                               placeholder={"Movie URL here"} value={props.film.url}/>
+                               placeholder={"Movie URL here"} value={film.url}/>
                     </div>
                     <div className="component">
                         <p className='component__title'>GENRE</p>
-                        <Genre genre={props.film.genre}/>
+                        <Genre genre={film.genre}/>
                     </div>
                     <div className="component">
                         <p className='component__title'>OVERVIEW</p>
                         <input name={"overview"} type={"text"} className="component__input"
-                               placeholder={"Overview here"} value={props.film.overview}/>
+                               placeholder={"Overview here"} value={film.overview}/>
                     </div>
                     <div className="component">
                         <p className='component__title'>RUNTIME</p>
                         <input name={"runtime"} type={"text"} className="component__input"
-                               placeholder={"Runtime here"} value={props.film.runtime}/>
+                               placeholder={"Runtime here"} value={film.runtime}/>
                     </div>
                 </FilmsModal>}
             {isModalDelete &&
