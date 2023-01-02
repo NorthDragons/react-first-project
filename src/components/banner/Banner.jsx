@@ -4,15 +4,23 @@ import SearchForm from "../search-block/SearchForm"
 import './Banner.css'
 import Button from "../button/Button";
 import PropTypes from "prop-types";
+import {useDispatch, useSelector} from "react-redux";
 
-function Banner({film, onClose}) {
+function Banner({onClose}) {
+    const film = useSelector(state => state.film);
+    const dispatch = useDispatch();
+
+    const hideInfo = () => {
+        console.log("hide info")
+        dispatch({type: "HIDE_INFO"})
+    }
     return (
         <div className="banner">
             {film ?
                 <div className={"film-info"}>
                     <Header/>
                     <div className={"info-card"}>
-                        <Button className={"info-card__search-button"} onClick={onClose}>
+                        <Button className={"info-card__search-button"} onClick={() => hideInfo()}>
                             <img src={"/images/search-icon.png"} alt={"search"}/>
                         </Button>
                         <img className={"info-card__img"} src={film.image} alt={"photo"}/>

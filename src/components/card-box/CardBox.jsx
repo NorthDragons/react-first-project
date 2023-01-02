@@ -2,8 +2,10 @@ import React from "react";
 import Card from "../card/Card";
 import "./CardBox.css"
 import PropTypes from "prop-types";
+import {useSelector} from "react-redux";
 
-function CardBox({films, onClick}) {
+function CardBox(onClick) {
+    const films = useSelector(state => state.films)
 
     return (
         <div className="card-box">

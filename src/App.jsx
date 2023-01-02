@@ -4,8 +4,11 @@ import Banner from './components/banner/Banner';
 import Content from "./components/content/Content";
 import ErrorBoundary from "./components/error-boundary/ErrorBoundary.js"
 import filmsJson from "./components/films.json"
+import {Provider} from "react-redux";
 
 function App() {
+
+
     const [films, setFilms] = useState(filmsJson)
     const [film, setFilm] = useState('');
 
