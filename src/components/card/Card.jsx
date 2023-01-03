@@ -3,12 +3,13 @@ import './Card.css'
 import PropTypes from "prop-types";
 import FilmsDropdown from "./dropdown/FilmsDropdown";
 import {useDispatch} from "react-redux";
+import {showInfoAction} from "../../store/reducers/MovieReducer";
 
 function Card({film, onClick}) {
     const dispatch = useDispatch();
 
-    const showInfo = (film) => {
-        dispatch({type: "SHOW_INFO", film: film})
+    const showInfo = (payload) => {
+        dispatch(showInfoAction(payload))
     }
 
     return (
@@ -18,7 +19,7 @@ function Card({film, onClick}) {
                 <img src={film.image} className="card__img" alt={"some photo"}/>
                 <div className='film-title'>
                     <h2 className="film-title__h2-name">{film.title}</h2>
-                    <p className="film-title__p-year">{film.date}</p>
+                    <p className="film-title__p-year">{film.releaseDate}</p>
                 </div>
                 <div className='genre'><p className="film-title__p-genre">{film.genre}</p></div>
             </div>

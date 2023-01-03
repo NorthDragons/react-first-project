@@ -5,6 +5,7 @@ import './Banner.css'
 import Button from "../button/Button";
 import PropTypes from "prop-types";
 import {useDispatch, useSelector} from "react-redux";
+import {hideInfoAction} from "../../store/reducers/MovieReducer";
 
 function Banner({onClose}) {
     const film = useSelector(state => state.film);
@@ -12,7 +13,7 @@ function Banner({onClose}) {
 
     const hideInfo = () => {
         console.log("hide info")
-        dispatch({type: "HIDE_INFO"})
+        dispatch(hideInfoAction())
     }
     return (
         <div className="banner">

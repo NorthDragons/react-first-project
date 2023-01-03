@@ -1,31 +1,26 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Footer from './components/footer/Footer';
 import Banner from './components/banner/Banner';
 import Content from "./components/content/Content";
 import ErrorBoundary from "./components/error-boundary/ErrorBoundary.js"
 import filmsJson from "./components/films.json"
-import {Provider} from "react-redux";
+import {getResponse} from "./store/asyncActions/Movies";
+import {getMoviesAction} from "./store/reducers/MovieReducer";
 
 function App() {
 
-
-    const [films, setFilms] = useState(filmsJson)
-    const [film, setFilm] = useState('');
-
-    function setFilmInfo(filmForUpdate) {
-        setFilm(filmForUpdate);
-        console.log(film)
-    }
-
-    function removeFilmInfo() {
-        setFilm('');
-    }
+    useEffect(() => {
+        getResponse().then(movies => {
+            console.log(movies);
+            getMoviesAction("GET_MOVIES", movies)
+        }, [])
+    })
 
     return (
         <ErrorBoundary>
             <React.Fragment>
-                <Banner film={film} onClose={removeFilmInfo}/>
-                <Content onClick={setFilmInfo} films={films}/>
+                <Banner/>
+                <Content/>
                 <Footer/>
             </React.Fragment>
         </ErrorBoundary>
