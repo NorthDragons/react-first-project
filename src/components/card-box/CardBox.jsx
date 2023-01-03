@@ -6,7 +6,9 @@ import {useSelector} from "react-redux";
 
 function CardBox() {
     const films = useSelector(state => state.films)
-
+    if (!films) {
+        return null;
+    }
     return (
         <div className="card-box">
             {films.length > 0 && <h3 className="card-box__h3">{films.length} Movies found </h3>}

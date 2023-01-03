@@ -1,24 +1,25 @@
-import filmsJson from "../../components/films.json";
-
 const GET_MOVIES = "GET_MOVIES";
 const SHOW_INFO = "SHOW_INFO";
 const HIDE_INFO = "HIDE_INFO";
+
 let defaultState = {
-    films: filmsJson
+    films: [],
+    film: null
 }
+
 export const movieReducer = (state, action) => {
     switch (action.type) {
         case GET_MOVIES:
-            return {...state, films: action.payload}
+            return {...state, films: action.films}
         case SHOW_INFO:
-            return {...state, films: filmsJson, film: action.payload}
+            return {...state, film: action.film}
         case HIDE_INFO:
-            return {...state, films: filmsJson, film: null}
+            return {...state, film: null}
         default:
             return defaultState
     }
 }
 
-export const showInfoAction = (payload) => ({type: SHOW_INFO, payload})
-export const getMoviesAction = (payload) => ({type: GET_MOVIES, payload})
+export const showInfoAction = (film) => ({type: SHOW_INFO, film})
+export const getMoviesAction = (films) => ({type: GET_MOVIES, films})
 export const hideInfoAction = () => ({type: HIDE_INFO})

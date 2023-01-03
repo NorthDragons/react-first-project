@@ -7,8 +7,8 @@ import PropTypes from "prop-types";
 import {useDispatch, useSelector} from "react-redux";
 import {hideInfoAction} from "../../store/reducers/MovieReducer";
 
-function Banner({onClose}) {
-    const film = useSelector(state => state.film);
+function Banner() {
+    const film = useSelector(action => action.film);
     const dispatch = useDispatch();
 
     const hideInfo = () => {
