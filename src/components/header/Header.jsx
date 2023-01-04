@@ -20,31 +20,6 @@ function Header({showButton}) {
         setIsModalOpen(!isModalOpen);
 
     }
-    const putValue = (e) => {
-        switch (e.target.name) {
-            case "title":
-                setMovie({...movie, title: e.target.value})
-                return;
-            case "date":
-                setMovie({...movie, releaseDate: e.target.value})
-                return;
-            case "movieUrl":
-                setMovie({...movie, posterPath: e.target.value})
-                return;
-            case "genre":
-                setMovie({...movie, genres: e.target.value})
-                return;
-            case "overview":
-                setMovie({...movie, overview: e.target.value})
-                return;
-            case "runtime":
-                setMovie({...movie, runtime: e.target.value})
-                return;
-            default:
-                movie = {}
-                return;
-        }
-    }
     const saveMovie = (movie) => {
         toggleModal()
         const promise = addMovie(movie);
@@ -63,12 +38,14 @@ function Header({showButton}) {
                             onClose={toggleModal}>
                     <div className="component">
                         <p className='component__title'>TITLE</p>
-                        <input name={"title"} type={"text"} className="component__input" onChange={(e) => putValue(e)}
+                        <input name={"title"} type={"text"} className="component__input"
+                               onChange={(e) => setMovie({...movie, title: e.target.value})}
                                placeholder={"Title here"}/>
                     </div>
                     <div className="component">
                         <p className='component__title'>RELEASE DATE</p>
-                        <input name={"date"} type="text" onChange={(e) => putValue(e)}
+                        <input name={"date"} type="text"
+                               onChange={(e) => setMovie({...movie, releaseDate: e.target.value})}
                                placeholder={"Select Date"} className="component__input"
                                onFocus={(e) => (e.target.type = "date")}
                                onBlur={(e) => (e.target.type = "text")}
@@ -76,22 +53,24 @@ function Header({showButton}) {
                     </div>
                     <div className="component">
                         <p className='component__title'>MOVIE URL</p>
-                        <input name="movieUrl" type="text" className="component__input" onChange={(e) => putValue(e)}
+                        <input name="movieUrl" type="text" className="component__input"
+                               onChange={(e) => setMovie({...movie, posterPath: e.target.value})}
                                placeholder={"Movie URL here"}/>
                     </div>
                     <div className="component">
                         <p className='component__title'>GENRE</p>
-                        <Genre onChange={(e) => putValue(e)}/>
+                        <Genre onChange={(e) => setMovie({...movie, genres: e.target.value})}/>
                     </div>
                     <div className="component">
                         <p className='component__title'>OVERVIEW</p>
                         <input name={"overview"} type={"text"} className="component__input"
-                               onChange={(e) => putValue(e)}
+                               onChange={(e) => setMovie({...movie, overview: e.target.value})}
                                placeholder={"Overview here"}/>
                     </div>
                     <div className="component">
                         <p className='component__title'>RUNTIME</p>
-                        <input name={"runtime"} type={"text"} className="component__input" onChange={(e) => putValue(e)}
+                        <input name={"runtime"} type={"text"} className="component__input"
+                               onChange={(e) => setMovie({...movie, runtime: e.target.value})}
                                placeholder={"Runtime here"}/>
                     </div>
                 </FilmsModal>}
