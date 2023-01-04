@@ -1,3 +1,9 @@
+export async function deleteMovie(id) {
+    return await fetch('http://localhost:8080/api/movies/' + id, {
+        method: "DELETE"
+    });
+}
+
 export async function addMovie(movie) {
     const response = await fetch('http://localhost:8080/api/movies', {
         method: "POST",
@@ -10,8 +16,12 @@ export async function addMovie(movie) {
 
 }
 
-export async function getAllMovie() {
-    const response = await fetch('http://localhost:8080/api/movies');
+export async function getAllMovie(genreParams) {
+    let url = 'http://localhost:8080/api/movies';
+    if (genreParams != null && !genreParams.isEmpty) {
+        url += genreParams;
+    }
+    const response = await fetch(url);
     if (!response.ok) {
         console.log("test1111")
         throw new Error(`HTTP error! status: ${response.status}`);

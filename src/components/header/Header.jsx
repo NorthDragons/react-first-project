@@ -7,7 +7,7 @@ import Genre from "../modal-films/genre-dropdown/Genre";
 import PropTypes from "prop-types";
 import {addMovieAction} from "../../store/reducers/MovieReducer";
 import {useDispatch} from "react-redux";
-import {addMovie} from "../../store/asyncActions/Movies";
+import {addMovie} from "../../store/asyncActions/MoviesAction";
 
 function Header({showButton}) {
 
@@ -34,7 +34,7 @@ function Header({showButton}) {
                     + ADD MOVIE
                 </Button>}
             {isModalOpen &&
-                <FilmsModal onSave={() => saveMovie(movie)} action={"SAVE"} title={"ADD MOVIE"} className={"modal"}
+                <FilmsModal onClick={() => saveMovie(movie)} action={"SAVE"} title={"ADD MOVIE"} className={"modal"}
                             onClose={toggleModal}>
                     <div className="component">
                         <p className='component__title'>TITLE</p>

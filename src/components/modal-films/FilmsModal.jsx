@@ -3,7 +3,7 @@ import './FilmModal.css'
 import ReactDOM from "react-dom";
 import Button from "../button/Button";
 
-function FilmsModal({onSave, className, onClose, title, children, hideReset, action}) {
+function FilmsModal({onClick, className, onClose, title, children, hideReset, action}) {
 
     return (
         ReactDOM.createPortal(
@@ -19,7 +19,7 @@ function FilmsModal({onSave, className, onClose, title, children, hideReset, act
                     </div>
                     <div className='button-group'>
                         {!hideReset && <Button className='button-group__button'>RESET</Button>}
-                        <Button onClick={onSave} className='button-group__button submit'>{action}</Button>
+                        <Button onClick={onClick} className='button-group__button submit'>{action}</Button>
                     </div>
                 </div>
             </React.Fragment>,

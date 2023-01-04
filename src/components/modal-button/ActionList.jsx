@@ -4,6 +4,9 @@ import Button from "../button/Button";
 import FilmsModal from "../modal-films/FilmsModal";
 import Genre from "../modal-films/genre-dropdown/Genre";
 import PropTypes from "prop-types";
+import {deleteMovie} from "../../store/asyncActions/MoviesAction";
+import {useDispatch} from "react-redux";
+import {deleteMovieAction} from "../../store/reducers/MovieReducer";
 
 
 function ActionList({onClose, isModalOpen, film}) {
@@ -11,7 +14,7 @@ function ActionList({onClose, isModalOpen, film}) {
     let [isModalEdit, setIsModalEdit] = useState(false);
     let [isModalDelete, setIsModalDelete] = useState(false);
     let [dateValue, setDateValue] = useState(film.date);
-
+    const dispatch = useDispatch();
     function openEditModal() {
         setIsModalEdit(true)
         onClose();
@@ -28,6 +31,15 @@ function ActionList({onClose, isModalOpen, film}) {
 
     function closeDeleteModal() {
         setIsModalDelete(false)
+    }
+
+    const removeMovie = (id) => {
+        closeDeleteModal()
+        deleteMovie(id).then((response) => {
+            if (response.status !== 200) {
+                throw new Error("Unexpected error " + response.status);
+            }
+        }).then(dispatch(deleteMovieAction(id)))
     }
 
     return (
@@ -89,7 +101,8 @@ function ActionList({onClose, isModalOpen, film}) {
                     </div>
                 </FilmsModal>}
             {isModalDelete &&
-                <FilmsModal action={"SUBMIT"} title={"DELETE MOVIE"} className={'modal-small'} hideReset={true}
+                <FilmsModal onClick={() => removeMovie(film.id)} action={"SUBMIT"} title={"DELETE MOVIE"}
+                            className={'modal-small'} hideReset={true}
                             onClose={closeDeleteModal}>
                     <p className={'modal-del__p-del'}>Are you sure you want to delete this movie?</p>
                 </FilmsModal>}
