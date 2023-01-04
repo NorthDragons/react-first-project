@@ -16,12 +16,12 @@ function Card({film, onClick}) {
         <div className={"card-border"}>
             <FilmsDropdown film={film}/>
             <div className="card" onClick={() => showInfo(film)}>
-                <img src={film.image} className="card__img" alt={"some photo"}/>
+                <img src={film.posterPath} className="card__img" alt={"some photo"}/>
                 <div className='film-title'>
                     <h2 className="film-title__h2-name">{film.title}</h2>
                     <p className="film-title__p-year">{film.releaseDate}</p>
                 </div>
-                <div className='genre'><p className="film-title__p-genre">{film.genre}</p></div>
+                <div className='genre'><p className="film-title__p-genre">{film.genres. join(", ")}</p></div>
             </div>
         </div>
     );

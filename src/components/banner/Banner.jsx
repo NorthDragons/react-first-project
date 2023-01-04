@@ -24,10 +24,10 @@ function Banner() {
                         <Button className={"info-card__search-button"} onClick={() => hideInfo()}>
                             <img src={"/images/search-icon.png"} alt={"search"}/>
                         </Button>
-                        <img className={"info-card__img"} src={film.image} alt={"photo"}/>
+                        <img className={"info-card__img"} src={film.posterPath} alt={"photo"}/>
                         <div className={"info"}>
-                            <h1 className={"title__h1"}>{film.title}<span>{film.rate}</span></h1>
-                            <p className={"title__p"}>{film.date}<span>{film.runtime}</span></p>
+                            <h1 className={"title__h1"}>{film.title}<span>{film.voteAverage}</span></h1>
+                            <p className={"title__p"}>{film.releaseDate}<span>{film.runtime} min</span></p>
                             <p className={"title__p-overview"}>{film.overview}</p>
                         </div>
                     </div>

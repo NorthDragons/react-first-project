@@ -2,7 +2,7 @@ import "./GenreStyle.css"
 import {useState} from "react";
 import PropTypes from "prop-types";
 
-function CheckBox({genre}) {
+function CheckBox({onChange, genre}) {
 
     const [genreValue, setGenreValue] = useState(genre ? genre : "Select Genre")
     const [valueSet, setValueSet] = useState(new Set());
@@ -14,6 +14,7 @@ function CheckBox({genre}) {
         } else {
             setValueSet(valueSet.add(value))
         }
+        onChange({target: {name: "genre", value: Array.from(valueSet)}})
         setGenreValue(Array.from(valueSet).toString())
     }
 
