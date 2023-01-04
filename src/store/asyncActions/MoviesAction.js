@@ -1,3 +1,13 @@
+export async function updateMovie(movie) {
+    return await fetch("http://localhost:8080/api/movies", {
+        method: "PUT",
+        body: JSON.stringify(movie),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+}
+
 export async function deleteMovie(id) {
     return await fetch('http://localhost:8080/api/movies/' + id, {
         method: "DELETE"

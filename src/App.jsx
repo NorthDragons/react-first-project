@@ -12,7 +12,7 @@ function App() {
     useEffect(() => {
         getAllMovie().then(payload => {
             dispatch(getMoviesAction(payload));
-        }, [])
+        },[])
     })
 
     return (
