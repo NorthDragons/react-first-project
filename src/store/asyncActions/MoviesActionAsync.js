@@ -5,6 +5,10 @@ export async function updateMovie(movie) {
         headers: {
             'Content-Type': 'application/json'
         }
+    }).then((response) => {
+        if (!response.ok) {
+            alert("HTTP error" + response.status)
+        }
     })
 }
 
@@ -23,7 +27,6 @@ export async function addMovie(movie) {
         },
     });
     return response.json();
-
 }
 
 export async function getAllMovie(genreParams) {

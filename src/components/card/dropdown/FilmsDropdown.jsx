@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import "./FilmsDropdownStyle.css"
-import ActionList from "../../modal-button/ActionList";
+import ActionList from "../../edit-delite-action/ActionList";
 import Button from "../../button/Button";
 import PropTypes from "prop-types";
 

@@ -1,4 +1,4 @@
-import Filter from "../filter/Filter";
+import Filter from "./filter/Filter";
 import SortingDropMenu from "./sorting-drop-menu/SortingDropMenu.jsx";
 
 

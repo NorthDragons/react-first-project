@@ -21,7 +21,7 @@ function Card({film, onClick}) {
                     <h2 className="film-title__h2-name">{film.title}</h2>
                     <p className="film-title__p-year">{film.releaseDate}</p>
                 </div>
-                <div className='genre'><p className="film-title__p-genre">{film.genres. join(", ")}</p></div>
+                <div className='genre'><p className="film-title__p-genre">{film.genres.join(", ")}</p></div>
             </div>
         </div>
     );

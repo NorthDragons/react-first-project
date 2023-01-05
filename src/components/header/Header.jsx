@@ -7,7 +7,7 @@ import Genre from "../modal-films/genre-dropdown/Genre";
 import PropTypes from "prop-types";
 import {addMovieAction} from "../../store/reducers/MovieReducer";
 import {useDispatch} from "react-redux";
-import {addMovie} from "../../store/asyncActions/MoviesAction";
+import {addMoviePromise} from "../../store/asyncActions/MoviePromis";
 
 function Header({showButton}) {
 
@@ -22,8 +22,9 @@ function Header({showButton}) {
     }
     const saveMovie = (movie) => {
         toggleModal()
-        const promise = addMovie(movie);
-        promise.then((json) => dispatch(addMovieAction(movie)))
+        addMoviePromise(movie)
+            .then(response => response.json())
+            .then(movie => dispatch(addMovieAction(movie)));
     }
 
     return (

@@ -4,9 +4,9 @@ import Button from "../button/Button";
 import FilmsModal from "../modal-films/FilmsModal";
 import Genre from "../modal-films/genre-dropdown/Genre";
 import PropTypes from "prop-types";
-import {deleteMovie, getAllMovie, updateMovie} from "../../store/asyncActions/MoviesAction";
 import {useDispatch} from "react-redux";
-import {deleteMovieAction, getMoviesAction, updateMovieAction} from "../../store/reducers/MovieReducer";
+import {deleteMovieAction, updateMovieAction} from "../../store/reducers/MovieReducer";
+import {deleteMoviePromise, updateMoviePromise} from "../../store/asyncActions/MoviePromis";
 
 
 function ActionList({onClose, isModalOpen, film}) {
@@ -14,7 +14,6 @@ function ActionList({onClose, isModalOpen, film}) {
 
     let [isModalEdit, setIsModalEdit] = useState(false);
     let [isModalDelete, setIsModalDelete] = useState(false);
-    let [dateValue, setDateValue] = useState(film.date);
     const dispatch = useDispatch();
 
     function openEditModal() {
@@ -37,20 +36,20 @@ function ActionList({onClose, isModalOpen, film}) {
 
     const editMovie = () => {
         closeEditModal()
-        updateMovie(movieForUpdate).then((response) => {
-            if (response.status !== 200) {
-                throw new Error("Unexpected status: - " + response.status)
-            }
-        }).then(dispatch(updateMovieAction(movieForUpdate)))
+        updateMoviePromise(movieForUpdate)
+            .then(response => response.json())
+            .then((movie) => {
+                dispatch(updateMovieAction(movie))
+            })
     }
 
     const removeMovie = (id) => {
+        const delId = id;
         closeDeleteModal()
-        deleteMovie(id).then((response) => {
-            if (response.status !== 200) {
-                throw new Error("Unexpected error " + response.status);
-            }
-        }).then(dispatch(deleteMovieAction(id)))
+        deleteMoviePromise(delId)
+            .then(() => {
+                dispatch(deleteMovieAction(delId))
+            })
     }
 
     return (

@@ -34,3 +34,6 @@
 button:hover {
     color: #F65261;
 }
+button.active:hover{
+    color: #FFFFFF;
+}
