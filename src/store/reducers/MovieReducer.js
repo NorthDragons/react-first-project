@@ -9,14 +9,15 @@ const SORT_MOVIES = "SORT_MOVIES";
 let defaultState = {
     films: [],
     film: null,
-    sort: 'title'
+    sort: 'title',
+    genre: {}
 }
 export const movieReducer = (state, action) => {
     let films = []
     switch (action.type) {
         case SORT_MOVIES:
-            state.films.sort(sortByField(action.sortValue))
-            return {...state, films: state.films, sort: action.sortValue}
+            films = state.films.sort(sortByField(action.sortValue))
+            return {...state, films: films, sort: action.sortValue}
         //
         case UPDATE_MOVIE:
             films = state.films.filter(film => film.id !== action.film.id)

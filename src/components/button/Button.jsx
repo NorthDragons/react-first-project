@@ -3,12 +3,12 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 
 
-const Button = ({children, onClick, className, disabled, active, name}) => {
+const Button = ({children, onClick, className, disabled, active, name,value}) => {
     const classes = classNames(
         'brn', className, {active}
     );
     return (
-        <button role={"button"} name={name} className={classes} disabled={disabled} onClick={onClick}>{children}</button>
+        <button role={"button"} name={name} className={classes} value={value} disabled={disabled} onClick={onClick}>{children}</button>
     );
 }
 
