@@ -1,44 +1,44 @@
+const URL = 'http://localhost:8080/api/movies/';
+
 export async function updateMovie(movie) {
-    return await fetch("http://localhost:8080/api/movies", {
+    return await fetch(URL, {
         method: "PUT",
         body: JSON.stringify(movie),
         headers: {
             'Content-Type': 'application/json'
         }
-    }).then((response) => {
-        if (!response.ok) {
-            alert("HTTP error" + response.status)
-        }
     })
 }
 
 export async function deleteMovie(id) {
-    return await fetch('http://localhost:8080/api/movies/' + id, {
-        method: "DELETE"
-    });
+    try {
+        return await fetch(URL + id, {
+            method: "DELETE"
+        });
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 export async function addMovie(movie) {
-    const response = await fetch('http://localhost:8080/api/movies', {
-        method: "POST",
-        body: JSON.stringify(movie),
-        headers: {
-            'Content-Type': 'application/json'
-        },
-    });
-    return response.json();
+    try {
+        return await fetch(URL, {
+            method: "POST",
+            body: JSON.stringify(movie),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+    } catch (error) {
+        console.log(error)
+    }
+
 }
 
-export async function getAllMovie(genreParams) {
-    let url = 'http://localhost:8080/api/movies';
-    if (genreParams != null && !genreParams.isEmpty) {
-        url += genreParams;
+export async function getAllMovie(genre) {
+    try {
+        return await fetch(URL + "?filter=" + genre);
+    } catch (error) {
+        console.log(error)
     }
-    const response = await fetch(url);
-    if (!response.ok) {
-        console.log("test1111")
-        throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    console.log("01231032130")
-    return await response.json();
 }

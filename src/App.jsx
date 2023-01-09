@@ -4,14 +4,16 @@ import Banner from './components/banner/Banner';
 import Content from "./components/content/Content";
 import ErrorBoundary from "./components/error-boundary/ErrorBoundary.js"
 import {getMoviesAction} from "./store/reducers/MovieReducer";
-import {useDispatch} from "react-redux";
-import {getAllMoviePromise} from "./store/asyncActions/MoviePromis";
+import {useDispatch, useSelector} from "react-redux";
+import {getAllMovie} from "./store/asyncActions/MoviesActionAsync";
 
 function App() {
     const dispatch = useDispatch();
+    const filter = useSelector(state => state.filter)
+
 
     useEffect(() => {
-        getAllMoviePromise().then(response => response.json()).then(films => {
+        getAllMovie(filter[0]).then(response => response.json()).then(films => {
             dispatch(getMoviesAction(films));
         }, [])
     })

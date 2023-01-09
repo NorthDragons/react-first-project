@@ -2,10 +2,10 @@ import "./GenreStyle.css"
 import {useState} from "react";
 import PropTypes from "prop-types";
 
-function CheckBox({onChange, genre}) {
+function CheckBox({onChange, genres}) {
 
-    const [genreValue, setGenreValue] = useState(genre ? genre : "Select Genre")
-    const [valueSet, setValueSet] = useState(new Set());
+    const [genreValue, setGenreValue] = useState(genres ? genres.join(", ") : "Select Genre")
+    const [valueSet, setValueSet] = useState(new Set(genres ? genres : []));
 
     function setValue(e) {
         const value = e.target.value;
@@ -14,7 +14,7 @@ function CheckBox({onChange, genre}) {
         } else {
             setValueSet(valueSet.add(value))
         }
-        onChange({target: {name: "genre", value: Array.from(valueSet)}})
+        onChange({target: {value: Array.from(valueSet)}})
         setGenreValue(Array.from(valueSet).toString())
     }
 
@@ -45,6 +45,6 @@ function CheckBox({onChange, genre}) {
 }
 
 CheckBox.propTypes = {
-    genre: PropTypes.string
+    genre: PropTypes.array
 }
 export default CheckBox;

@@ -24,6 +24,6 @@ export function addMoviePromise(movie) {
     });
 }
 
-export function getAllMoviePromise() {
-    return fetch("http://localhost:8080/api/movies");
+export function getAllMoviePromise(genre) {
+    return fetch("http://localhost:8080/api/movies?filter=" + genre);
 }

@@ -6,6 +6,7 @@ import {useSelector} from "react-redux";
 
 function CardBox() {
     const films = useSelector(state => state.films)
+
     if (!films) {
         return null;
     }

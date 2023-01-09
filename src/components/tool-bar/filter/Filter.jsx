@@ -1,39 +1,49 @@
-import React, {useState} from "react";
+import React from "react";
 import './Filter.css'
 import Button from "../../button/Button";
+import {useDispatch, useSelector} from "react-redux";
+import {getMoviesAction, setFilterAction} from "../../../store/reducers/MovieReducer";
+import {getAllMovie} from "../../../store/asyncActions/MoviesActionAsync";
 
 function Filter() {
-    let [genres, setGenres] = useState({
-        all: true,
-    })
+    const filterGenre = useSelector(state => state.filter)
+    const dispatch = useDispatch();
+    const setFilter = (e) => {
+        getAllMovie(e).then(response => response.json()).then(films => {
+            dispatch(getMoviesAction(films));
+        });
+        dispatch(setFilterAction(e))
+    }
+
+
     return (
         <div className="filter">
             <ul className="filter__button-group">
                 <li>
-                    <Button active={genres.all}
-                            onClick={(e) => {
-                                setGenres({all: true})
+                    <Button active={filterGenre.includes("all")}
+                            onClick={() => {
+                                setFilter(["all"])
                             }}>ALL</Button>
                 </li>
                 <li>
-                    <Button onClick={(e) => {
-                        setGenres({documentary: true})
-                    }} active={genres.documentary}>DOCUMENTARY</Button>
+                    <Button onClick={() => {
+                        setFilter(["Documentary"])
+                    }} active={filterGenre.includes("Documentary")}>DOCUMENTARY</Button>
                 </li>
                 <li>
-                    <Button onClick={(e) => {
-                        setGenres({comedy: true})
-                    }} active={genres.comedy}>COMEDY</Button>
+                    <Button onClick={() => {
+                        setFilter(["Comedy"])
+                    }} active={filterGenre.includes("Comedy")}>COMEDY</Button>
                 </li>
                 <li>
-                    <Button onClick={(e) => {
-                        setGenres({horror: true})
-                    }} active={genres.horror}>HORROR</Button>
+                    <Button onClick={() => {
+                        setFilter(["Horror"])
+                    }} active={filterGenre.includes("Horror")}>HORROR</Button>
                 </li>
                 <li>
-                    <Button onClick={(e) => {
-                        setGenres({crime: true})
-                    }}  active={genres.crime}>CRIME</Button>
+                    <Button onClick={() => {
+                        setFilter(["Crime"])
+                    }} active={filterGenre.includes("Crime")}>CRIME</Button>
                 </li>
             </ul>
         </div>

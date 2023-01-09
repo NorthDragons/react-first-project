@@ -1,16 +1,16 @@
 import "./ActionListStyle.css"
-import React, {useState} from "react";
+import React, {useCallback, useContext, useEffect, useReducer, useState} from "react";
 import Button from "../button/Button";
 import FilmsModal from "../modal-films/FilmsModal";
 import Genre from "../modal-films/genre-dropdown/Genre";
 import PropTypes from "prop-types";
 import {useDispatch} from "react-redux";
 import {deleteMovieAction, updateMovieAction} from "../../store/reducers/MovieReducer";
-import {deleteMoviePromise, updateMoviePromise} from "../../store/asyncActions/MoviePromis";
+import {deleteMovie, updateMovie} from "../../store/asyncActions/MoviesActionAsync";
 
 
 function ActionList({onClose, isModalOpen, film}) {
-    let [movieForUpdate, setMovieForUpdate] = useState(film);
+    let [movieForUpdate, setMovieForUpdate] = useState({...film});
 
     let [isModalEdit, setIsModalEdit] = useState(false);
     let [isModalDelete, setIsModalDelete] = useState(false);
@@ -36,7 +36,7 @@ function ActionList({onClose, isModalOpen, film}) {
 
     const editMovie = () => {
         closeEditModal()
-        updateMoviePromise(movieForUpdate)
+        updateMovie(movieForUpdate)
             .then(response => response.json())
             .then((movie) => {
                 dispatch(updateMovieAction(movie))
@@ -46,7 +46,7 @@ function ActionList({onClose, isModalOpen, film}) {
     const removeMovie = (id) => {
         const delId = id;
         closeDeleteModal()
-        deleteMoviePromise(delId)
+        deleteMovie(delId)
             .then(() => {
                 dispatch(deleteMovieAction(delId))
             })
@@ -79,18 +79,20 @@ function ActionList({onClose, isModalOpen, film}) {
                         <input name={"title"} type={"text"} className="component__input"
                                onChange={(e) => {
                                    setMovieForUpdate({...movieForUpdate, title: e.target.value})
+                                   film = Object.assign({}, film.title = e.target.value)
                                }}
-                               placeholder={"Title here"} value={movieForUpdate.title}/>
+                               placeholder={"Title here"}
+                               value={movieForUpdate.title}/>
                     </div>
                     <div className="component">
                         <p className='component__title'>RELEASE DATE</p>
-                        <input id={"date"} value={movieForUpdate.releaseDate}
+                        <input id={"date"}
+                               value={movieForUpdate.releaseDate}
                                type="text"
                                placeholder={"Select Date"} className="component__input"
                                onFocus={(e) => (e.target.type = "date")}
                                onBlur={(e) => (e.target.type = "text")}
                                onChange={(e) => {
-                                   setMovieForUpdate({...movieForUpdate, releaseDate: e.target.value})
                                }}
                         />
                     </div>
@@ -98,30 +100,32 @@ function ActionList({onClose, isModalOpen, film}) {
                         <p className='component__title'>MOVIE URL</p>
                         <input name="url" type="text" className="component__input"
                                onChange={(e) => {
-                                   setMovieForUpdate({...movieForUpdate, posterPath: e.target.value})
                                }}
-                               placeholder={"Movie URL here"} value={movieForUpdate.posterPath}/>
+                               placeholder={"Movie URL here"}
+                               value={movieForUpdate.posterPath}/>
                     </div>
                     <div className="component">
                         <p className='component__title'>GENRE</p>
-                        <Genre onChange={(e) => setMovieForUpdate({...movieForUpdate, genres: e.target.value})}
-                               genre={film.genre}/>
+                        <Genre onChange={(e) => {
+
+                        }}
+                               genres={movieForUpdate.genres}/>
                     </div>
                     <div className="component">
                         <p className='component__title'>OVERVIEW</p>
                         <input name={"overview"} type={"text"} className="component__input"
                                onChange={(e) => {
-                                   setMovieForUpdate({...movieForUpdate, overview: e.target.value})
                                }}
-                               placeholder={"Overview here"} value={movieForUpdate.overview}/>
+                               placeholder={"Overview here"}
+                               value={movieForUpdate.overview}/>
                     </div>
                     <div className="component">
                         <p className='component__title'>RUNTIME</p>
                         <input name={"runtime"} type={"text"} className="component__input"
                                onChange={(e) => {
-                                   setMovieForUpdate({...movieForUpdate, runtime: e.target.value})
                                }}
-                               placeholder={"Runtime here"} value={movieForUpdate.runtime}/>
+                               placeholder={"Runtime here"}
+                               value={movieForUpdate.runtime}/>
                     </div>
                 </FilmsModal>}
             {isModalDelete &&
