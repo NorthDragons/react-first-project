@@ -1,5 +1,5 @@
 import "./ActionListStyle.css"
-import React, {useCallback, useContext, useEffect, useReducer, useState} from "react";
+import React, {useState} from "react";
 import Button from "../button/Button";
 import FilmsModal from "../modal-films/FilmsModal";
 import Genre from "../modal-films/genre-dropdown/Genre";
@@ -10,7 +10,7 @@ import {deleteMovie, updateMovie} from "../../store/asyncActions/MoviesActionAsy
 
 
 function ActionList({onClose, isModalOpen, film}) {
-    let [movieForUpdate, setMovieForUpdate] = useState({...film});
+    let [movieForUpdate, setMovieForUpdate] = useState(film);
 
     let [isModalEdit, setIsModalEdit] = useState(false);
     let [isModalDelete, setIsModalDelete] = useState(false);
@@ -54,6 +54,7 @@ function ActionList({onClose, isModalOpen, film}) {
 
     return (
         <>
+            {movieForUpdate.title !== film.title && setMovieForUpdate(film)}
             {isModalOpen &&
                 <div className={"action-list"}>
                     <Button onClick={onClose} className='action-list__close-button'

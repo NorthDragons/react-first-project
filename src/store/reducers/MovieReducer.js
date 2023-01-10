@@ -44,7 +44,6 @@ export const movieReducer = (state, action) => {
             return {...state, film: null}
         default:
             return defaultState
-        //
     }
 }
 
