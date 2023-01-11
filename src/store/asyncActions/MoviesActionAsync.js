@@ -42,3 +42,12 @@ export async function getAllMovie(genre) {
         console.log(error)
     }
 }
+
+export async function getMovieById(id) {
+    try {
+        const response = await fetch(URL + id.toString());
+        return await response.json();
+    } catch (error) {
+        console.log(error)
+    }
+}

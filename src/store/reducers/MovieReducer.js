@@ -9,7 +9,7 @@ const SORT_MOVIES = "SORT_MOVIES";
 
 let defaultState = {
     films: [],
-    film: null,
+    film: {},
     sort: 'title',
     filter: ["all"]
 }
@@ -34,7 +34,6 @@ export const movieReducer = (state, action) => {
             films.sort(sortByField(state.sort))
             return {...state, films: films}
         case GET_MOVIES:
-            console.log("get moovv")
             films = [...action.films]
             films.sort(sortByField(state.sort))
             return {...state, films: films}

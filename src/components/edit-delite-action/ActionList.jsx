@@ -54,7 +54,7 @@ function ActionList({onClose, isModalOpen, film}) {
 
     return (
         <>
-            {movieForUpdate.title !== film.title && setMovieForUpdate(film)}
+            {movieForUpdate !== film && setMovieForUpdate(film)}
             {isModalOpen &&
                 <div className={"action-list"}>
                     <Button onClick={onClose} className='action-list__close-button'
