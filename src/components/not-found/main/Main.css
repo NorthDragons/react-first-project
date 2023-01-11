@@ -1,6 +1,9 @@
-button {
-    width: 10%;
-    height: 4%;
+.button-notfound {
+    width: 10vw;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: transparent;
     color: rgb(247, 108, 108);
     border: 1px solid rgb(241, 91, 91);
@@ -13,8 +16,7 @@ button {
 }
 
 .main {
-    height: 100%;
-    min-height: 90%;
+    height: 89vh;
     width: 100%;
     display: flex;
     flex-direction: column;

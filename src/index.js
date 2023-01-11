@@ -6,6 +6,8 @@ import ReactDOM from 'react-dom/client'
 import {Provider} from "react-redux";
 import {store} from "./store/MovieStore";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import NotFound from "./components/not-found/NotFound.jsx";
+import {FilmInfo} from "./components/banner/film-info/FilmInfo";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,7 +18,9 @@ root.render(
         <Provider store={store}>
             <BrowserRouter>
                 <Routes>
-                    <Route path={"/*"} element={<App/>}/>
+                    <Route not exact path={"/"} element={<App/>}/>
+                    <Route not exact path={"/film/:id"} element={<FilmInfo/>}/>
+                    <Route path={"*"} element={<NotFound/>}/>
                 </Routes>
             </BrowserRouter>
         </Provider>

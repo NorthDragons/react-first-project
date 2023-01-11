@@ -16,21 +16,24 @@ export const FilmInfo = () => {
     }, [])
     const film = useSelector(state => state.film)
     return (
+        <div className="banner">
 
-        <div className={"film-info"}>
+            <div className={"film-info"}>
 
-            <Header/>
-            <div className={"info-card"}>
-                <Link to={"/"}>
-                    <Button className={"info-card__search-button"}>
-                        <img src={"/images/search-icon.png"} alt={"search"}/>
-                    </Button>
-                </Link>
-                <img className={"info-card__img"} src={film.posterPath} alt={"photo"}/>
-                <div className={"info"}>
-                    <h1 className={"title__h1"}>{film.title}<span>{film.voteAverage}</span></h1>
-                    <p className={"title__p"}>{film.releaseDate}<span>{film.runtime} min</span></p>
-                    <p className={"title__p-overview"}>{film.overview}</p>
+                <Header/>
+                <div className={"info-card"}>
+                    <Link to={"/"}>
+                        <Button className={"info-card__search-button"}>
+                            <img src={"/images/search-icon.png"} alt={"search"}/>
+                        </Button>
+                    </Link>
+                    <img className={"info-card__img"} src={film.posterPath} alt={"photo"}/>
+                    <div className={"info"}>
+                        <h1 className={"title__h1"}>{film.title}<span>{film.voteAverage ? film.voteAverage : 0}</span>
+                        </h1>
+                        <p className={"title__p"}>{film.releaseDate}<span>{film.runtime} min</span></p>
+                        <p className={"title__p-overview"}>{film.overview}</p>
+                    </div>
                 </div>
             </div>
         </div>
